@@ -3,6 +3,11 @@
   publish = "dist/CV/browser"
   functions = "dist/CV/server"
 
+[functions]
+  directory = "dist/CV/server"
+  included_files = ["*.mjs", "*.json"]
+  external_node_modules = ["@angular/core", "@angular/common", "@angular/platform-server", "@angular/platform-browser", "rxjs", "zone.js"]
+
 [[plugins]]
   package = "@netlify/angular-runtime"
 
