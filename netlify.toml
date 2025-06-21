@@ -13,3 +13,13 @@
 [[edge_functions]]
   function = "angular-ssr"
   path = "/*"
+
+[[functions]]
+  included_files = ["dist/CV/server/**"]
+  external_node_modules = ["@angular/*"]
+
+[functions."server-main"]
+  included_files = ["dist/CV/server/main.server.mjs"]
+
+[functions."server-polyfills"]
+  included_files = ["dist/CV/server/polyfills.server.mjs"]
