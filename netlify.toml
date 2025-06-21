@@ -13,7 +13,3 @@
 [[edge_functions]]
   function = "render"
   path = "/*"
-
-[functions]
-  directory = "dist/CV/server"
-  included_files = ["dist/CV/server/index.server.html"]
