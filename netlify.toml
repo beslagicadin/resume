@@ -8,7 +8,7 @@
 
 [build.environment]
   ANGULAR_SSR = "true"
-  NODE_VERSION = "20.x"
+  NODE_VERSION = "20.19.0"
 
 [[edge_functions]]
   function = "render"
