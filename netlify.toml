@@ -11,5 +11,5 @@
   NODE_VERSION = "20.19.0"
 
 [[edge_functions]]
-  function = "render"
+  function = "angular-ssr"
   path = "/*"
