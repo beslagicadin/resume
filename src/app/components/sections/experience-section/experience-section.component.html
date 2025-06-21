@@ -1,0 +1,20 @@
+<section class="section experience">
+  <h2 class="section-title">Work Experience</h2>
+  <div class="timeline">
+    @for (exp of visibleExperiences; track exp.title) {
+      <div class="timeline-item">
+        <div class="timeline-item-header">
+          <h3>{{ exp.title }}</h3>
+          <span class="company">{{ exp.company }}</span>
+          <span class="date">{{ exp.period }}</span>
+        </div>
+        <p>{{ exp.description }}</p>
+      </div>
+    }
+    <div class="toggle-container">
+      <button class="toggle-button" (click)="toggleCollapse()">
+        {{ isCollapsed ? 'Show More' : 'Show Less' }}
+      </button>
+    </div>
+  </div>
+</section>

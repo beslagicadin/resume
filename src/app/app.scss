@@ -1,0 +1,41 @@
+/* Styles specific to app component */
+:host {
+  display: block;
+  min-height: 100vh;
+  position: relative;
+  padding-bottom: 60px; /* Height of the footer */
+  background-color: var(--bg-color);
+  transition: background-color var(--transition-speed);
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  padding: 40px 20px 20px;
+  margin: 0 auto;
+  max-width: 1600px; /* Constrains the maximum width on very large screens */
+  gap: 40px; /* Space between sidebar and main content */
+  
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 30px;
+    padding: 30px 15px 15px;
+  }
+  
+  @media (max-width: 480px) {
+    padding: 20px 10px 10px;
+    gap: 20px;
+  }
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  padding: 20px;
+  color: var(--text-color-light);
+  font-size: 0.9rem;
+  transition: color var(--transition-speed);
+}

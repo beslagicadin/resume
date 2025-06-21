@@ -1,0 +1,58 @@
+.main-content {
+  background-color: var(--card-bg);
+  border-radius: var(--border-radius);
+  padding: 20px;
+  box-shadow: 0 4px 6px var(--shadow-color);
+  transition: all var(--transition-speed);
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* Mobile and small screens */
+@media (max-width: 767px) {
+  .main-content {
+    padding: 15px;
+    margin: 10px;
+    width: calc(100% - 20px);
+  }
+}
+
+/* Tablet and small desktop */
+@media (min-width: 768px) {
+  .main-content {
+    max-width: min(60vw, 800px);
+    min-width: 40rem;
+    padding: 25px;
+    margin-left: 15px;
+  }
+}
+
+/* Medium desktop */
+@media (min-width: 992px) {
+  .main-content {
+    max-width: min(60vw, 900px);
+    min-width: 45rem;
+    padding: 30px;
+    margin-left: 20px;
+  }
+}
+
+/* Large desktop */
+@media (min-width: 1400px) {
+  .main-content {
+    max-width: min(60vw, 1000px);
+    min-width: 50rem;
+    padding: 35px;
+    margin-left: 25px;
+  }
+}
+
+/* Extra large desktop */
+@media (min-width: 1800px) {
+  .main-content {
+    max-width: min(60vw, 1100px);
+    min-width: 55rem;
+    padding: 40px;
+    margin-left: 30px;
+  }
+}

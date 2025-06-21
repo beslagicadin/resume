@@ -1,0 +1,55 @@
+.theme-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 100;
+}
+
+.theme-switch {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 60px;
+  height: 30px;
+  background-color: var(--card-bg);
+  border-radius: 30px;
+  cursor: pointer;
+  position: relative;
+  box-shadow: 0 2px 5px var(--shadow-color);
+  transition: background-color var(--transition-speed);
+  border: none;
+  padding: 0 8px;
+}
+
+.sun-icon, .moon-icon {
+  font-size: 18px;
+  transition: transform var(--transition-speed), opacity var(--transition-speed);
+}
+
+.sun-icon {
+  color: #f59e0b;
+}
+
+.moon-icon {
+  color: #6366f1;
+}
+
+:host-context(body.dark-theme) {
+  .sun-icon {
+    opacity: 0.5;
+  }
+  
+  .moon-icon {
+    opacity: 1;
+  }
+}
+
+:host-context(body:not(.dark-theme)) {
+  .sun-icon {
+    opacity: 1;
+  }
+  
+  .moon-icon {
+    opacity: 0.5;
+  }
+}

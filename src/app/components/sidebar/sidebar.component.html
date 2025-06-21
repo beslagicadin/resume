@@ -1,0 +1,56 @@
+<aside class="sidebar">
+  <div class="profile">
+    <div class="profile-img">
+      <div class="avatar"></div>
+    </div>
+    <h1>Adin Bešlagić</h1>
+    <p class="role">Software Engineer</p>
+    <p class="location">
+      <fa-icon [icon]="faMapMarker"></fa-icon> Maribor, Slovenia
+    </p>
+    <p class="company">
+      <fa-icon [icon]="faBuilding"></fa-icon> Resonate d.o.o.,
+      Tuzla, Bosnia and Herzegovina
+    </p>
+
+  </div>
+
+  <div class="contact-info">
+    <h2>Contact</h2>
+    <ul>
+      <li>
+        <a href="mailto:beslagicadin@gmail.com">
+          <fa-icon [icon]="faEnvelope"></fa-icon> Email
+        </a>
+      </li>
+      <li>
+        <a href="tel:+38669437424">
+          <fa-icon [icon]="faPhone"></fa-icon> Phone
+        </a>
+      <li>
+        <a href="https://github.com/beslagicadin" target="_blank">
+          <fa-icon [icon]="faGithub"></fa-icon> GitHub
+        </a>
+      </li>
+      <li>
+        <a href="https://linkedin.com/in/beslagicadin" target="_blank">
+          <fa-icon [icon]="faLinkedin"></fa-icon> LinkedIn
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="skills">
+    <h2>Skills</h2>
+    @for (category of skillCategories; track category.name) {
+      <div class="skill-category">
+        <h3>{{ category.name }}</h3>
+        <div class="skill-tags">
+          @for (skill of category.skills; track skill) {
+            <span class="skill-tag">{{ skill }}</span>
+          }
+        </div>
+      </div>
+    }
+  </div>
+</aside>
