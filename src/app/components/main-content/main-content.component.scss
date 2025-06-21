@@ -3,9 +3,13 @@
   border-radius: var(--border-radius);
   padding: 20px;
   box-shadow: 0 4px 6px var(--shadow-color);
-  transition: all var(--transition-speed);
+  transition: 
+    background-color var(--transition-speed),
+    box-shadow var(--transition-speed),
+    transform 0.2s ease;
   width: 100%;
   margin: 0 auto;
+  will-change: transform;
 }
 
 /* Mobile and small screens */
@@ -21,7 +25,7 @@
 @media (min-width: 768px) {
   .main-content {
     max-width: min(60vw, 800px);
-    min-width: 40rem;
+    min-width: clamp(25rem, 40vw, 40rem);
     padding: 25px;
     margin-left: 15px;
   }
@@ -30,8 +34,8 @@
 /* Medium desktop */
 @media (min-width: 992px) {
   .main-content {
-    max-width: min(60vw, 900px);
-    min-width: 45rem;
+    max-width: min(62vw, 900px);
+    min-width: clamp(30rem, 45vw, 45rem);
     padding: 30px;
     margin-left: 20px;
   }
@@ -40,8 +44,8 @@
 /* Large desktop */
 @media (min-width: 1400px) {
   .main-content {
-    max-width: min(60vw, 1000px);
-    min-width: 50rem;
+    max-width: min(62vw, 1000px);
+    min-width: clamp(35rem, 50vw, 50rem);
     padding: 35px;
     margin-left: 25px;
   }
@@ -50,9 +54,22 @@
 /* Extra large desktop */
 @media (min-width: 1800px) {
   .main-content {
-    max-width: min(60vw, 1100px);
-    min-width: 55rem;
+    max-width: min(62vw, 1100px);
+    min-width: clamp(40rem, 52vw, 55rem);
     padding: 40px;
     margin-left: 30px;
+  }
+}
+
+/* Print styles - for better PDF generation */
+@media print {
+  .main-content {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+    box-shadow: none;
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
   }
 }
