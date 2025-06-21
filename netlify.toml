@@ -1,0 +1,10 @@
+[build]
+  command = "npm clean-install && npm fund && npm run build"
+  publish = "dist/CV/browser"
+
+[[plugins]]
+  package = "@netlify/angular-runtime"
+
+[build.environment]
+  ANGULAR_SSR = "true"
+  NODE_VERSION = "20.9.0"
