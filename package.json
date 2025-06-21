@@ -7,7 +7,9 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:CV": "node dist/CV/server/server.mjs"
+    "serve:ssr:CV": "node dist/CV/server/server.mjs",
+    "build:netlify": "ng build && ng run CV:server",
+    "dev:ssr": "ng run CV:serve-ssr"
   },
   "private": true,
   "dependencies": {
@@ -31,7 +33,7 @@
     "zone.js": "~0.15.0"
   },
   "devDependencies": {
-    "@angular/build": "^20.0.0",
+    "@angular-devkit/build-angular": "^20.0.0",
     "@angular/cli": "^20.0.0",
     "@angular/compiler-cli": "^20.0.0",
     "@types/express": "^5.0.1",

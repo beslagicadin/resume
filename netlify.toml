@@ -1,10 +1,15 @@
 [build]
-  command = "npm clean-install && npm fund && npm run build"
+  command = "npm run build:netlify"
   publish = "dist/CV/browser"
+  functions = "dist/CV/server"
 
 [[plugins]]
   package = "@netlify/angular-runtime"
 
 [build.environment]
   ANGULAR_SSR = "true"
-  NODE_VERSION = "22.14.0"
+  NODE_VERSION = "20.x"
+
+[[edge_functions]]
+  function = "render"
+  path = "/*"
