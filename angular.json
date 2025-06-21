@@ -110,6 +110,58 @@
               "src/styles.scss"
             ]
           }
+        },
+        "server": {
+          "builder": "@angular-devkit/build-angular:server",
+          "options": {
+            "outputPath": "dist/CV/server",
+            "main": "src/main.server.ts",
+            "tsConfig": "tsconfig.server.json"
+          },
+          "configurations": {
+            "production": {
+              "outputHashing": "media"
+            },
+            "development": {
+              "optimization": false,
+              "sourceMap": true,
+              "extractLicenses": false
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "prerender": {
+          "builder": "@angular-devkit/build-angular:prerender",
+          "options": {
+            "routes": [
+              "/"
+            ]
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "CV:build:production",
+              "serverTarget": "CV:server:production"
+            },
+            "development": {
+              "browserTarget": "CV:build:development",
+              "serverTarget": "CV:server:development"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "ssr-dev-server": {
+          "builder": "@angular-devkit/build-angular:ssr-dev-server",
+          "configurations": {
+            "development": {
+              "browserTarget": "CV:build:development",
+              "serverTarget": "CV:server:development"
+            },
+            "production": {
+              "browserTarget": "CV:build:production",
+              "serverTarget": "CV:server:production"
+            }
+          },
+          "defaultConfiguration": "development"
         }
       }
     }
