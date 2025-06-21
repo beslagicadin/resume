@@ -8,8 +8,12 @@
 
 [build.environment]
   ANGULAR_SSR = "true"
-  NODE_VERSION = "20.x"
+  NODE_VERSION = "20.19.0"
 
 [[edge_functions]]
   function = "render"
   path = "/*"
+
+[functions]
+  directory = "dist/CV/server"
+  included_files = ["dist/CV/server/index.server.html"]

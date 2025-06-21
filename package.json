@@ -8,7 +8,7 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "serve:ssr:CV": "node dist/CV/server/server.mjs",
-    "build:netlify": "ng build && ng run CV:server",
+    "build:netlify": "ng build --configuration production",
     "dev:ssr": "ng run CV:serve-ssr"
   },
   "private": true,
