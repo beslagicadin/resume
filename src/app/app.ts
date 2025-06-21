@@ -23,7 +23,7 @@ import { MainContentComponent } from './components/main-content/main-content.com
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
-export class App implements OnInit {
+export class AppComponent implements OnInit {
   constructor(private themeService: ThemeService) {}
 
   ngOnInit(): void {

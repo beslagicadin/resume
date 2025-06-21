@@ -1,23 +1,28 @@
-import { AngularAppEngine, createRequestHandler } from '@angular/ssr'
-import { getContext } from '@netlify/angular-runtime/context.mjs'
+import { renderApplication } from '@angular/platform-server';
+import { APP_BASE_HREF } from '@angular/common';
+import { config } from './app/app.config.server';
+import bootstrap from './main.server';
 
-const angularAppEngine = new AngularAppEngine()
+export const netlifyAppEngineHandler = async (request: Request): Promise<Response> => {
+  const url = new URL(request.url);
+  const documentPath = './index.html';
+  
+  try {
+    const html = await renderApplication(bootstrap, {
+      document: documentPath,
+      url: url.pathname + url.search,
+      platformProviders: [
+        { provide: APP_BASE_HREF, useValue: '/' }
+      ]
+    });
 
-export async function netlifyAppEngineHandler(request: Request): Promise<Response> {
-  const context = getContext()
+    return new Response(html, {
+      headers: { 'Content-Type': 'text/html' },
+    });
+  } catch (error) {
+    console.error(error);
+    return new Response('Server Error', { status: 500 });
+  }
+};
 
-  // Example API endpoints can be defined here.
-  // Uncomment and define endpoints as necessary.
-  // const pathname = new URL(request.url).pathname;
-  // if (pathname === '/api/hello') {
-  //   return Response.json({ message: 'Hello from the API' });
-  // }
-
-  const result = await angularAppEngine.handle(request, context)
-  return result || new Response('Not found', { status: 404 })
-}
-
-/**
- * The request handler used by the Angular CLI (dev-server and during build).
- */
-export const reqHandler = createRequestHandler(netlifyAppEngineHandler)
+export const reqHandler = () => {};

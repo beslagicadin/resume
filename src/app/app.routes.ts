@@ -1,11 +1,10 @@
 import { Routes } from '@angular/router';
-import { App } from './app';
+import { AppComponent } from './app';
 
 export const routes: Routes = [
-  { 
-    path: '', 
-    component: App,
-    title: 'Adin Bešlagić | Software Developer'
-  },
-  { path: '**', redirectTo: '' }
+  { path: '', component: AppComponent }
+];
+
+export const serverRoutes: Routes = [
+  { path: '', component: AppComponent }
 ];
