@@ -1,0 +1,163 @@
+# See https://docs.github.com/get-started/getting-started-with-git/ignoring-files for more about ignoring files.
+
+# === ANGULAR SPECIFIC ===
+# Angular build artifacts and cache
+/dist
+/tmp
+/out-tsc
+/bazel-out
+# Angular cache - consolidated
+.angular/cache
+
+# Source maps
+**/*.map
+
+# === COMPILED OUTPUT ===
+# Compiled JavaScript files (except specific config files)
+**/*.js
+**/*.js.map
+!/karma.conf.js
+!/angular.json
+!/package.json
+!/tsconfig.json
+!/postcss.config.js
+!/tailwind.config.js
+!/jest.config.js
+
+# === DEPENDENCIES ===
+# Node modules and logs
+/node_modules
+.pnpm-store/
+.npm
+
+# === DEBUG AND LOGS ===
+# Log files
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+/libpeerconnection.log
+testem.log
+*-debug.log
+
+# === IDES AND EDITORS ===
+# IntelliJ and other JetBrains
+.idea/
+*.iml
+*.iws
+*.ipr
+.idea_modules/
+
+# Eclipse
+.project
+.classpath
+.settings/
+
+# Cloud9
+.c9/
+
+# Generic IDE files
+*.launch
+*.sublime-workspace
+
+# Visual Studio
+*.suo
+.ntvs_analysis.dat
+.vs/
+
+# === VISUAL STUDIO CODE ===
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.history/*
+
+# === TESTING AND COVERAGE ===
+/coverage
+/coverage-reports
+/.nyc_output
+junit.xml
+
+# === E2E AND CYPRESS ===
+# E2E
+/e2e/*.js
+/e2e/*.map
+
+# Cypress
+/cypress/videos/
+/cypress/screenshots/
+/cypress/results/
+/cypress/downloads/
+
+# === BUILD AND CACHE ===
+# Build artifacts
+/.rollup.cache
+/.next/
+/build/
+stats.json
+size-plugin.json
+/connect.lock
+/typings
+.eslintcache
+.stylelintcache
+.webpack/
+/reports
+.scannerwork/
+.sass-cache/
+
+# === ENVIRONMENT FILES ===
+# Environment configurations
+/src/environments/*.ts
+!/src/environments/environment.ts
+.env
+.env.*
+!.env.example
+.env.backup
+.env.development.local
+.env.test.local
+.env.production.local
+.env.local
+
+# === FIREBASE ===
+.firebase/
+.runtimeconfig.json
+firebase-debug.log
+firebase-debug.*.log
+firebase.json
+.firebaserc
+
+# === SYSTEM FILES ===
+# macOS
+.DS_Store
+._*
+.Spotlight-V100
+.Trashes
+
+# Windows
+ehthumbs.db
+Thumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# === EDITOR BACKUPS ===
+*~
+*.bak
+*.swp
+*.swo
+*.tmp
+
+# === RUNTIME DATA ===
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# === LOCK FILES ===
+# Uncomment if you want to ignore lock files
+# package-lock.json
+# yarn.lock
+# pnpm-lock.yaml

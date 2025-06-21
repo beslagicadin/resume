@@ -1,0 +1,543 @@
+/* CSS Custom Properties */
+:host {
+  /* Base Colors */
+  --primary: var(--primary-color, #4a6cf7);
+  --primary-dark: var(--primary-color-dark, #3b82f6);
+  --text: var(--text-color, #333);
+  --text-light: var(--text-color-light, #666);
+  --text-dark: var(--text-color-dark, #e0e0e0);
+
+  /* Backgrounds */
+  --card-background: var(--card-bg, #fff);
+  --hover-background: var(--hover-bg, rgba(0, 0, 0, 0.02));
+  --hover-background-dark: var(--hover-bg-dark, rgba(255, 255, 255, 0.03));
+  --tag-background: var(--tag-bg, rgba(0, 0, 0, 0.03));
+  --tag-background-dark: var(--tag-bg-dark, rgba(255, 255, 255, 0.06));
+
+  /* Borders */
+  --border-light: var(--border-color-light, rgba(0, 0, 0, 0.08));
+  --border-dark: var(--border-color-dark, rgba(255, 255, 255, 0.1));
+  --border-radius-base: var(--border-radius, 12px);
+  --border-radius-tag: 20px;
+
+  /* Shadows */
+  --shadow-base: var(--shadow-color, rgba(0, 0, 0, 0.05));
+  --shadow-base-dark: rgba(0, 0, 0, 0.25);
+  --shadow-hover: var(--shadow-color, rgba(0, 0, 0, 0.08));
+  --shadow-hover-dark: rgba(0, 0, 0, 0.35);
+  --shadow-tag: var(--shadow-color, rgba(0, 0, 0, 0.05));
+  --shadow-tag-hover: var(--shadow-color, rgba(0, 0, 0, 0.15));
+  --shadow-tag-dark: rgba(0, 0, 0, 0.3);
+  --shadow-tag-hover-dark: rgba(0, 0, 0, 0.4);
+
+  /* Animation & Transitions */
+  --transition-duration: var(--transition-speed, 0.25s);
+  --transition-base: all var(--transition-duration) cubic-bezier(0.215, 0.61, 0.355, 1);
+  --transition-pop: all var(--transition-duration) cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  --transition-transform: transform var(--transition-duration) cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  --transition-shadow: box-shadow var(--transition-duration) cubic-bezier(0.215, 0.61, 0.355, 1);
+  --transition-color: color var(--transition-duration) ease-out, background-color var(--transition-duration) ease-out;
+  --animation-stagger-base: 0.15s;
+  --animation-stagger-tag: 0.05s;
+
+  /* Performance */
+  --gpu-accelerate: translateZ(0);
+  --hardware-accelerate: translate3d(0, 0, 0);
+
+  /* Spacing */
+  --section-spacing: 40px;
+  --category-spacing: 25px;
+  --tag-gap: 12px;
+  --section-title-margin: 20px;
+}
+
+.sidebar {
+  background-color: var(--card-bg);
+  border-radius: var(--border-radius);
+  padding: clamp(28px, 4vw, 35px);
+  margin-bottom: 25px;
+  box-shadow: 0 4px 6px var(--shadow-color);
+  transition: var(--transition-shadow), var(--transition-color);
+  width: 100%;
+  transform: var(--gpu-accelerate);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+.profile {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.profile-img {
+  margin-bottom: 15px;
+}
+
+.avatar {
+  width: 120px;
+  height: 120px;
+  background-image: url('https://media.licdn.com/dms/image/v2/D4D03AQGjcN3yILFqtA/profile-displayphoto-shrink_800_800/B4DZYG7YnLHwAc-/0/1743872953721?e=1755734400&v=beta&t=7OI3QY0zP8ghhmvUNuzyqMhR3tNxFICLwV-XiC9mUQw');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 50%;
+  margin: 0 auto;
+  transition: var(--transition-transform), box-shadow 0.3s ease;
+  transform: var(--gpu-accelerate);
+  box-shadow: 0 4px 10px var(--shadow-base);
+  border: 2px solid var(--border-light);
+  will-change: transform, box-shadow;
+
+  &:hover {
+    transform: scale(1.05) var(--gpu-accelerate);
+    box-shadow: 0 6px 15px var(--shadow-hover);
+  }
+}
+
+.profile h1 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.role {
+  color: var(--primary-color);
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.location, .company {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  color: var(--text-color-light);
+  font-size: 0.9rem;
+  margin-bottom: 5px;
+}
+.contact-info, .github-stats, .skills {
+  margin-bottom: var(--section-spacing);
+}
+
+.skills {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  position: relative;
+}
+
+.contact-info h2, .github-stats h2, .skills h2 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: var(--section-title-margin);
+  color: var(--text);
+  position: relative;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--primary);
+  transition: var(--transition-transform), var(--transition-color), border-bottom-width 0.2s ease;
+  letter-spacing: 0.03em;
+  transform: var(--gpu-accelerate);
+
+  &:hover {
+    color: var(--primary);
+    transform: translateX(4px) var(--gpu-accelerate);
+    border-bottom-width: 3px;
+    text-shadow: 0 1px 2px var(--shadow-base);
+  }
+}
+
+.contact-info ul {
+  list-style: none;
+}
+
+.contact-info li {
+  margin-bottom: 10px;
+}
+
+.contact-info a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--text-color);
+  text-decoration: none;
+  transition: var(--transition-color);
+  transform: var(--gpu-accelerate);
+}
+
+.contact-info a:hover {
+  color: var(--primary-color);
+}
+
+.stats-container {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-number {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--primary);
+}
+
+.stat-label {
+  font-size: 0.8rem;
+  color: var(--text-light);
+}
+
+.skill-category {
+  margin-bottom: var(--category-spacing);
+  padding: 16px 20px;
+  border: 1px solid var(--border-light);
+  transition: var(--transition-transform), var(--transition-shadow), background-color 0.3s ease, border-color 0.3s ease;
+  position: relative;
+  border-radius: 16px;
+  margin-left: 2px;
+  margin-right: 2px;
+  background-color: var(--card-background);
+  box-shadow: 0 3px 8px var(--shadow-base);
+  will-change: transform, box-shadow, border-color;
+  transform: var(--gpu-accelerate);
+  backface-visibility: hidden;
+}
+
+.skill-category:last-child {
+  margin-bottom: 0;
+}
+
+.skill-category h3 {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 16px;
+  padding-bottom: 8px;
+  display: flex;
+  align-items: center;
+  transition: var(--transition-transform), var(--transition-color), border-bottom-color 0.3s ease;
+  letter-spacing: 0.02em;
+  border-bottom: 1px solid var(--border-light);
+  position: relative;
+  transform: var(--gpu-accelerate);
+}
+
+.skill-category h3::before {
+  content: '';
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background-color: var(--primary);
+  margin-right: 12px;
+  border-radius: 50%;
+  transition: var(--transition-transform), var(--transition-shadow), background-color 0.3s ease;
+  box-shadow: 0 1px 3px var(--shadow-base);
+  will-change: transform, box-shadow;
+  transform: var(--gpu-accelerate);
+}
+
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--tag-gap);
+  margin-left: 22px; /* Align with the category heading dot */
+  transition: var(--transition-transform);
+  padding-bottom: 10px;
+  padding-top: 6px;
+  transform: var(--gpu-accelerate);
+}
+
+.skill-tag {
+  background-color: var(--tag-background);
+  color: var(--text);
+  padding: 8px 16px;
+  border-radius: var(--border-radius-tag);
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+              box-shadow 0.3s cubic-bezier(0.215, 0.61, 0.355, 1),
+              background-color 0.3s ease,
+              color 0.3s ease,
+              border-color 0.3s ease;
+  box-shadow: 0 2px 5px var(--shadow-tag);
+  border: 1px solid var(--border-light);
+  cursor: default;
+  user-select: none;
+  line-height: 1.2;
+  letter-spacing: 0.01em;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  will-change: transform, box-shadow, background-color;
+  transform: var(--gpu-accelerate);
+  backface-visibility: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transform: translateX(-100%) var(--gpu-accelerate);
+    transition: transform 0.6s ease;
+    pointer-events: none;
+    will-change: transform;
+  }
+}
+
+.skill-tag:hover {
+  background-color: var(--primary);
+  color: white;
+  transform: translateY(-3px) scale(1.05) var(--gpu-accelerate);
+  box-shadow: 0 5px 15px var(--shadow-tag-hover);
+  border-color: var(--primary);
+
+  &::before {
+    transform: translateX(100%) var(--gpu-accelerate);
+  }
+}
+
+@media (min-width: 768px) {
+  .sidebar {
+    flex: 1;
+    position: sticky;
+    top: 40px;
+    align-self: flex-start;
+    max-width: min(35vw, 450px);
+    min-width: 20rem;
+    margin-right: clamp(20px, 3vw, 35px);
+    padding: clamp(30px, 3vw, 35px);
+    transition: max-width 0.3s ease, min-width 0.3s ease, margin-right 0.3s ease, padding 0.3s ease;
+  }
+}
+
+@media (min-width: 992px) {
+  .sidebar {
+    max-width: min(32vw, 500px);
+    min-width: 22rem;
+  }
+}
+
+@media (min-width: 1400px) {
+  .sidebar {
+    max-width: min(30vw, 550px);
+    min-width: 25rem;
+    padding: clamp(32px, 2.5vw, 38px);
+    margin-right: clamp(25px, 2.5vw, 40px);
+  }
+}
+
+@media (min-width: 1800px) {
+  .sidebar {
+    max-width: min(28vw, 600px);
+    min-width: 28rem;
+    padding: clamp(35px, 2vw, 40px);
+    margin-right: clamp(30px, 2vw, 45px);
+  }
+}
+
+@media (max-width: 767px) {
+  .sidebar {
+    padding: clamp(20px, 5vw, 28px);
+    margin-bottom: 20px;
+  }
+
+  .avatar {
+    width: 100px;
+    height: 100px;
+  }
+
+  .profile h1 {
+    font-size: 1.5rem;
+  }
+
+  .contact-info h2, .github-stats h2, .skills h2 {
+    font-size: 1.15rem;
+    padding-bottom: 8px;
+    margin-bottom: 14px;
+  }
+
+  .skill-category {
+    margin-bottom: 18px;
+    padding: 8px 12px;
+    border-radius: 8px;
+  }
+
+  .skill-category h3 {
+    font-size: 0.95rem;
+    margin-bottom: 10px;
+    letter-spacing: 0.01em;
+  }
+
+  .skill-category h3::before {
+    width: 7px;
+    height: 7px;
+    margin-right: 10px;
+  }
+
+  .skill-tags {
+    gap: 10px;
+    margin-left: 17px;
+    padding-bottom: 4px;
+  }
+
+  .skill-tag {
+    padding: 6px 14px;
+    font-size: 0.8rem;
+    box-shadow: 0 1px 3px var(--shadow-color, rgba(0, 0, 0, 0.05));
+  }
+}
+
+/* Skill category hover effects */
+.skill-category:hover {
+  background-color: var(--hover-background);
+  box-shadow: 0 5px 15px var(--shadow-hover);
+  transform: translateY(-3px) scale(1.01) var(--gpu-accelerate);
+  border-color: var(--primary);
+
+  h3::before {
+    transform: scale(1.25) var(--gpu-accelerate);
+    box-shadow: 0 3px 8px var(--shadow-hover);
+    background-color: var(--primary);
+  }
+
+  h3 {
+    color: var(--primary);
+    transform: translateX(2px) var(--gpu-accelerate);
+  }
+
+  .skill-tags {
+    transform: translateX(2px) var(--gpu-accelerate);
+  }
+}
+
+/* Focus style for accessibility */
+.skill-tag:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+  transform: translateY(-2px) var(--gpu-accelerate);
+  box-shadow: 0 5px 10px var(--shadow-tag-hover);
+}
+
+/* Dark mode specific adjustments */
+:host-context(body.dark-theme) {
+  .avatar {
+    border-color: var(--border-dark);
+    box-shadow: 0 4px 12px var(--shadow-base-dark);
+
+    &:hover {
+      box-shadow: 0 6px 18px var(--shadow-hover-dark);
+    }
+  }
+
+  .contact-info h2, .github-stats h2, .skills h2 {
+    border-bottom-color: var(--primary-dark);
+
+    &:hover {
+      color: var(--primary-dark);
+      text-shadow: 0 1px 3px var(--shadow-base-dark);
+    }
+  }
+
+  .skill-category {
+    border-color: var(--border-dark);
+    box-shadow: 0 3px 10px var(--shadow-base-dark);
+
+    &:hover {
+      background-color: var(--hover-background-dark);
+      border-color: var(--primary-dark);
+      box-shadow: 0 6px 18px var(--shadow-hover-dark);
+    }
+
+    h3 {
+      border-bottom-color: var(--border-dark);
+
+      &::before {
+        background-color: var(--primary-dark);
+        box-shadow: 0 2px 5px var(--shadow-tag-dark);
+      }
+    }
+  }
+
+  .skill-tag {
+    background-color: var(--tag-background-dark);
+    color: var(--text-dark);
+    border-color: var(--border-dark);
+    box-shadow: 0 2px 6px var(--shadow-tag-dark);
+
+    &:hover {
+      background-color: var(--primary-dark);
+      box-shadow: 0 5px 15px var(--shadow-tag-hover-dark);
+      border-color: var(--primary-dark);
+    }
+
+    &::before {
+      background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    }
+
+    &:focus-visible {
+      outline: 2px solid var(--primary-dark);
+      outline-offset: 2px;
+    }
+  }
+}
+
+/* Animation for skill tags */
+@keyframes skillTagAppear {
+  from {
+    opacity: 0;
+    transform: translateY(15px) var(--gpu-accelerate);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) var(--gpu-accelerate);
+  }
+}
+
+.skill-tag {
+  animation: skillTagAppear 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+  animation-delay: calc(var(--index, 0) * var(--animation-stagger-tag) + 0.1s); /* Adding base delay after parent appears */
+  opacity: 0;
+  contain: layout style; /* Improve performance by reducing paint area */
+}
+
+/* Add transition for skill category on page load */
+.skill-category {
+  animation: fadeIn 0.5s cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
+  animation-delay: calc(var(--index, 0) * var(--animation-stagger-base));
+  opacity: 0;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px) var(--gpu-accelerate);
+    filter: blur(2px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) var(--gpu-accelerate);
+    filter: blur(0);
+  }
+}
+
+/* Add container properties to improve rendering performance */
+.skills {
+  contain: content;
+}
+
+.skill-category {
+  contain: layout style;
+}
+
+/* Reduce unnecessary repaints by isolating elements */
+.skill-category h3, .skill-tags, .contact-info h2, .github-stats h2, .skills h2 {
+  isolation: isolate;
+}

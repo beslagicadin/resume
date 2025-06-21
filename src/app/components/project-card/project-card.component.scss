@@ -1,0 +1,242 @@
+.project-card {
+  background-color: var(--bg-color);
+  border-radius: var(--border-radius);
+  padding: clamp(1.25rem, 3vw, 1.75rem); /* Responsive padding */
+  box-shadow: 0 2px 4px var(--shadow-color);
+  transition: all var(--transition-speed) cubic-bezier(0.165, 0.84, 0.44, 1);
+  width: 100%;     /* Take full width of grid cell */
+  margin: 0;        /* Remove margin to respect grid gap */
+  height: 100%;    /* Take full height of grid cell */
+  display: flex;   /* Use flex layout for content */
+  flex-direction: column;  /* Stack content vertically */
+  min-height: 200px;  /* Minimum height for consistency */
+  position: relative;
+  will-change: transform, box-shadow; /* Performance optimization */
+  contain: content; /* Improve performance */
+  backface-visibility: hidden; /* Smooths transitions */
+}
+
+.project-card:hover {
+  transform: translateY(-5px) translateZ(0);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.project-header {
+  margin-bottom: 0.75rem;
+  flex-shrink: 0;  /* Prevent header from shrinking */
+}
+
+.project-header h3 {
+  font-size: clamp(1.1rem, 2vw, 1.3rem); /* Responsive font size */
+  font-weight: 600;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* Show maximum of 2 lines */
+  -webkit-box-orient: vertical;
+  word-break: break-word;
+  line-height: 1.4;
+  margin: 0;
+}
+
+/* Technologies container */
+/* Technologies container */
+.technologies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 1rem;
+}
+
+/* Base technology badge styles */
+.technology-badge {
+  font-size: 0.8rem;
+  padding: 3px 8px;
+  border-radius: 4px;
+  color: var(--text-color);
+  white-space: nowrap;  /* Prevent tags from wrapping */
+  overflow: hidden;     /* Hide overflow */
+  text-overflow: ellipsis; /* Show ellipsis for overflow text */
+  flex-shrink: 0;      /* Prevent shrinking */
+  display: flex;       /* Use flexbox for icon alignment */
+  align-items: center; /* Center items vertically */
+  gap: 5px;           /* Space between icon and text */
+  transition: all var(--transition-speed) ease;
+  background-color: transparent;
+  border: 1px solid var(--border-color, rgba(125, 125, 125, 0.3));
+}
+
+.technology-badge:hover {
+  transform: translateY(-1px);
+  border-color: var(--primary-color);
+  color: var(--primary-color);
+}
+
+.technology-icon {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+}
+
+.language-text {
+  line-height: 1;      /* Tight line height */
+}
+
+/* Technology badge styles using CSS variables */
+.technology-badge.angular {
+  border-color: var(--angular-color, #dd0031);
+}
+
+.technology-badge.react-native, .technology-badge.react {
+  border-color: var(--react-color, #61dbfb);
+}
+
+.technology-badge.python, .technology-badge.data-analysis {
+  border-color: var(--python-color, #306998);
+}
+
+.technology-badge.html-and-css, .technology-badge.html {
+  border-color: var(--html-color, #e34c26);
+}
+
+.technology-badge.css {
+  border-color: var(--css-color, #264de4);
+}
+
+.technology-badge.javascript {
+  border-color: var(--javascript-color, #f0db4f);
+}
+
+.technology-badge.typescript {
+  border-color: var(--typescript-color, #007acc);
+}
+
+.technology-badge.php {
+  border-color: var(--php-color, #777bb3);
+}
+
+.technology-badge.java {
+  border-color: var(--java-color, #5382a1);
+}
+
+.technology-badge.visual-csharp, .technology-badge.csharp {
+  border-color: var(--csharp-color, #9b4f96);
+}
+
+.technology-badge.c {
+  border-color: var(--c-color, #283593);
+}
+
+.technology-badge.cpp {
+  border-color: var(--cpp-color, #00599c);
+}
+
+.technology-badge.spring {
+  border-color: var(--spring-color, #6DB33F);
+}
+
+.technology-badge.mysql {
+  border-color: var(--mysql-color, #00758F);
+}
+
+.technology-badge.firebase {
+  border-color: var(--firebase-color, #FFCA28);
+}
+
+.technology-badge.qt {
+  border-color: var(--qt-color, #41CD52);
+}
+
+.technology-badge.dotnet {
+  border-color: var(--dotnet-color, #512BD4);
+}
+
+.technology-badge.flask {
+  border-color: var(--flask-color, #000000);
+}
+
+.technology-badge.rest-api {
+  border-color: var(--rest-api-color, #009688);
+}
+
+.technology-badge.scss {
+  border-color: var(--scss-color, #CC6699);
+}
+
+.technology-badge.jira {
+  border-color: var(--jira-color, #0052CC);
+}
+
+.technology-badge.android {
+  border-color: var(--android-color, #3DDC84);
+}
+
+p {
+  flex: 1;  /* Allow description to take remaining space */
+  margin-bottom: 15px;
+  overflow-y: auto;  /* Enable scrolling for long content */
+  max-height: 150px;  /* Maximum height before scrolling */
+  padding-right: 5px;  /* Space for scrollbar */
+  font-size: clamp(0.875rem, 1vw, 1rem); /* Responsive font size */
+  line-height: 1.6;
+  color: var(--text-color);
+}
+
+/* Add custom scrollbar styles for better appearance */
+p::-webkit-scrollbar {
+  width: 4px;
+}
+
+p::-webkit-scrollbar-track {
+  background: var(--bg-color);
+  border-radius: 2px;
+}
+
+p::-webkit-scrollbar-thumb {
+  background: var(--primary-color);
+  border-radius: 2px;
+}
+
+.project-link {
+  display: inline-block;
+  margin-top: auto;  /* Push link to bottom */
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color var(--transition-speed), transform var(--transition-speed);
+  padding: 0.5rem 0;
+  position: relative;
+}
+
+.project-link:hover {
+  color: var(--secondary-color);
+  transform: translateX(3px);
+}
+
+.project-link fa-icon {
+  margin-left: 5px;
+  font-size: 0.8rem;
+}
+
+/* Media queries for better responsive behavior */
+@media (max-width: 768px) {
+  .project-card {
+    padding: 1rem;
+    min-height: 180px;
+  }
+  
+  p {
+    max-height: 120px;
+  }
+}
+
+/* Dark mode specific adjustments */
+@media (prefers-color-scheme: dark) {
+  .project-card {
+    box-shadow: 0 2px 8px var(--shadow-color);
+  }
+  
+  .project-card:hover {
+    box-shadow: 0 10px 20px var(--shadow-color);
+  }
+}

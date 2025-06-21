@@ -1,0 +1,17 @@
+<section class="section education">
+  <h2 class="section-title">Education</h2>
+  <div class="timeline">
+    @for (edu of educations; track edu.degree) {
+      <div class="timeline-item">
+        <div class="timeline-item-header">
+          <h3>{{ edu.degree }}</h3>
+          <span class="institution">{{ edu.institution }}</span>
+          <span class="date">{{ edu.period }}</span>
+        </div>
+        @if (edu.description) {
+          <p>{{ edu.description }}</p>
+        }
+      </div>
+    }
+  </div>
+</section>

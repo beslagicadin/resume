@@ -1,0 +1,19 @@
+<div class="project-card fade-in" [ngStyle]="animationStyle">
+  <div class="project-header">
+    <h3>{{ project.name }}</h3>
+  </div>
+  <div class="technologies">
+    @for (tech of project.technologies; track tech) {
+      <span [class]="'technology-badge ' + getLanguageClass(tech)">
+        <img [src]="getLanguageIconUrl(tech)" 
+             [alt]="tech + ' icon'" 
+             class="technology-icon">
+        <span class="technology-text">{{ tech }}</span>
+      </span>
+    }
+  </div>
+  <p>{{ project.description }}</p>
+  <a [href]="project.repoUrl" class="project-link" target="_blank">
+    View Project <fa-icon [icon]="faExternalLink"></fa-icon>
+  </a>
+</div>
