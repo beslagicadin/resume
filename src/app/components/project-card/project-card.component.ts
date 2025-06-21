@@ -65,8 +65,6 @@ export class ProjectCardComponent implements OnInit {
    */
   getLanguageClass(language: string): string {
     const languageLower = language.toLowerCase();
-    console.log(`Original language: "${language}"`);
-    console.log(`Lowercase: "${languageLower}"`);
 
     // Map of languages to CSS classes
     const languageMap: Record<string, string> = {
@@ -95,7 +93,7 @@ export class ProjectCardComponent implements OnInit {
     };
 
     const result = languageMap[languageLower] || languageLower.replace(/[^a-z0-9]+/g, '-');
-    console.log(`Mapped to class: "${result}"`);
+    // console.log(`Mapped to class: "${result}"`);
     return result;
   }
 

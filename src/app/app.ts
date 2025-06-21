@@ -28,6 +28,6 @@ export class App implements OnInit {
 
   ngOnInit(): void {
     // Initialize application
-    console.log('CV application initialized');
+    // console.log('CV application initialized');
   }
 }
