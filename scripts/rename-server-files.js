@@ -7,7 +7,7 @@ const fs = require('fs');
 const path = require('path');
 
 // Path to the server output directory
-const serverOutputDir = path.join(__dirname, '../dist/CV/server');
+const serverOutputDir = path.join(process.cwd(), 'dist/CV/server');
 
 // Files to check and rename
 const filesToRename = [
@@ -80,37 +80,4 @@ function updateImportsInDirectory(directory, oldFilename, newFilename) {
   });
 }
 
-const fs = require('fs');
-const path = require('path');
-
-const serverDir = path.join(process.cwd(), 'dist', 'CV', 'server');
-
-// Function to rename files
-function renameFiles() {
-  if (!fs.existsSync(serverDir)) {
-    console.error('Server directory not found');
-    process.exit(1);
-  }
-
-  const files = fs.readdirSync(serverDir);
-  
-  files.forEach(file => {
-    if (file === 'main.server.mjs') {
-      fs.renameSync(
-        path.join(serverDir, file),
-        path.join(serverDir, 'main-server.mjs')
-      );
-      console.log(`Renamed ${file} to main-server.mjs`);
-    } else if (file === 'polyfills.server.mjs') {
-      fs.renameSync(
-        path.join(serverDir, file),
-        path.join(serverDir, 'polyfills-server.mjs')
-      );
-      console.log(`Renamed ${file} to polyfills-server.mjs`);
-    }
-  });
-
-  console.log('Server files renamed successfully');
-}
-
-renameFiles();
+// End of script
