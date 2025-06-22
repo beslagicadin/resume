@@ -20,11 +20,13 @@
     "@angular/platform-browser-dynamic": "^20.0.0",
     "@angular/platform-server": "^20.0.0",
     "@angular/router": "^20.0.0",
+    "@angular/service-worker": "^20.0.0",
     "@angular/ssr": "^20.0.3",
     "@fortawesome/angular-fontawesome": "^2.0.1",
     "@fortawesome/fontawesome-svg-core": "^6.7.2",
     "@fortawesome/free-brands-svg-icons": "^6.7.2",
     "@fortawesome/free-solid-svg-icons": "^6.7.2",
+    "@vercel/analytics": "^1.5.0",
     "boolbase": "^1.0.0",
     "express": "^4.18.2",
     "rxjs": "~7.8.0",
@@ -44,6 +46,7 @@
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
+    "pwa-asset-generator": "^8.0.5",
     "typescript": "~5.8.3"
   }
 }
