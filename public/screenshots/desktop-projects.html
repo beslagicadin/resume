@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio - Projects</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: #f5f5f5;
+    }
+    header {
+      background-color: #1976d2;
+      color: white;
+      padding: 16px 32px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    h1 {
+      font-size: 2.5rem;
+      margin: 0;
+    }
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .nav-links {
+      display: flex;
+      gap: 20px;
+    }
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .page-title {
+      font-size: 2.5rem;
+      color: #1976d2;
+      margin: 40px 0;
+      text-align: center;
+    }
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      gap: 30px;
+      margin-bottom: 60px;
+    }
+    .project-card {
+      background-color: white;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    }
+    .project-image {
+      height: 200px;
+      background-color: #1976d2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 1.5rem;
+    }
+    .project-content {
+      padding: 20px;
+    }
+    .project-title {
+      font-size: 1.5rem;
+      margin: 0 0 10px 0;
+      color: #333;
+    }
+    .project-description {
+      color: #666;
+      margin-bottom: 15px;
+    }
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .tag {
+      background-color: #e3f2fd;
+      color: #1976d2;
+      padding: 4px 10px;
+      border-radius: 16px;
+      font-size: 0.8rem;
+    }
+    .button {
+      background-color: #1976d2;
+      color: white;
+      padding: 8px 16px;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.9rem;
+      display: inline-block;
+      margin-top: 15px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <h1>Adin's Portfolio</h1>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+  
+  <div class="container">
+    <h2 class="page-title">My Projects</h2>
+    
+    <div class="projects-grid">
+      <div class="project-card">
+        <div class="project-image">Project 1</div>
+        <div class="project-content">
+          <h3 class="project-title">E-Commerce Platform</h3>
+          <p class="project-description">A responsive e-commerce platform with user authentication, product catalog, and secure payment processing.</p>
+          <div class="project-tags">
+            <span class="tag">Angular</span>
+            <span class="tag">TypeScript</span>
+            <span class="tag">Firebase</span>
+          </div>
+          <a href="#" class="button">View Project</a>
+        </div>
+      </div>
+      
+      <div class="project-card">
+        <div class="project-image">Project 2</div>
+        <div class="project-content">
+          <h3 class="project-title">Task Management App</h3>
+          <p class="project-description">Collaborative task management application with real-time updates and team collaboration features.</p>
+          <div class="project-tags">
+            <span class="tag">React</span>
+            <span class="tag">Node.js</span>
+            <span class="tag">MongoDB</span>
+          </div>
+          <a href="#" class="button">View Project</a>
+        </div>
+      </div>
+      
+      <div class="project-card">
+        <div class="project-image">Project 3</div>
+        <div class="project-content">
+          <h3 class="project-title">Portfolio Website</h3>
+          <p class="project-description">Personal portfolio website with responsive design, SEO optimization and PWA features.</p>
+          <div class="project-tags">
+            <span class="tag">Angular</span>
+            <span class="tag">PWA</span>
+            <span class="tag">SEO</span>
+          </div>
+          <a href="#" class="button">View Project</a>
+        </div>
+      </div>
+      
+      <div class="project-card">
+        <div class="project-image">Project 4</div>
+        <div class="project-content">
+          <h3 class="project-title">Weather Dashboard</h3>
+          <p class="project-description">Interactive weather dashboard with location-based forecasts and historical weather data.</p>
+          <div class="project-tags">
+            <span class="tag">JavaScript</span>
+            <span class="tag">API</span>
+            <span class="tag">Chart.js</span>
+          </div>
+          <a href="#" class="button">View Project</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Desktop Projects Screenshot</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      height: 100%;
+      width: 100%;
+    }
+    .container {
+      width: 1280px;
+      height: 720px;
+      overflow: hidden;
+      position: relative;
+      background-color: #f8f9fa;
+    }
+    header {
+      background-color: #0078ff;
+      color: white;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+    }
+    nav ul {
+      display: flex;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    nav ul li {
+      margin: 0 15px;
+    }
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .projects-header {
+      text-align: center;
+      padding: 30px 0;
+    }
+    .projects-header h2 {
+      font-size: 36px;
+      color: #333;
+      margin-bottom: 15px;
+    }
+    .projects-header p {
+      color: #666;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+      padding: 0 40px 40px;
+    }
+    .project-card {
+      background-color: white;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+    .project-card:hover {
+      transform: translateY(-5px);
+    }
+    .project-image {
+      height: 180px;
+      background-color: #0078ff;
+      position: relative;
+    }
+    .project-image::after {
+      content: "Project Screenshot";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      font-weight: bold;
+    }
+    .project-content {
+      padding: 20px;
+    }
+    .project-content h3 {
+      margin-top: 0;
+      font-size: 20px;
+      color: #333;
+    }
+    .project-content p {
+      color: #666;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      margin-top: 15px;
+    }
+    .tag {
+      background-color: #e9f0ff;
+      color: #0078ff;
+      padding: 4px 10px;
+      border-radius: 20px;
+      font-size: 12px;
+      margin-right: 8px;
+      margin-bottom: 8px;
+    }
+    .project-links {
+      display: flex;
+      margin-top: 15px;
+    }
+    .project-link {
+      color: #0078ff;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 14px;
+      margin-right: 15px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo">Adin Beslagic</div>
+      <nav>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+    
+    <div class="projects-header">
+      <h2>My Projects</h2>
+      <p>Here are some of the projects I've worked on. Each demonstrates different skills and technologies.</p>
+    </div>
+    
+    <div class="projects-grid">
+      <div class="project-card">
+        <div class="project-image"></div>
+        <div class="project-content">
+          <h3>Project One</h3>
+          <p>A responsive web application built with modern frameworks and best practices.</p>
+          <div class="project-tags">
+            <span class="tag">Angular</span>
+            <span class="tag">TypeScript</span>
+            <span class="tag">CSS</span>
+          </div>
+          <div class="project-links">
+            <a href="#" class="project-link">Live Demo</a>
+            <a href="#" class="project-link">Source Code</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="project-card">
+        <div class="project-image"></div>
+        <div class="project-content">
+          <h3>Project Two</h3>
+          <p>An interactive dashboard with data visualization and real-time analytics.</p>
+          <div class="project-tags">
+            <span class="tag">React</span>
+            <span class="tag">Node.js</span>
+            <span class="tag">D3.js</span>
+          </div>
+          <div class="project-links">
+            <a href="#" class="project-link">Live Demo</a>
+            <a href="#" class="project-link">Source Code</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="project-card">
+        <div class="project-image"></div>
+        <div class="project-content">
+          <h3>Project Three</h3>
+          <p>A mobile-first web application with offline capabilities and PWA features.</p>
+          <div class="project-tags">
+            <span class="tag">PWA</span>
+            <span class="tag">JavaScript</span>
+            <span class="tag">Firebase</span>
+          </div>
+          <div class="project-links">
+            <a href="#" class="project-link">Live Demo</a>
+            <a href="#" class="project-link">Source Code</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

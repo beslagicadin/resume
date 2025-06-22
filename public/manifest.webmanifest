@@ -78,26 +78,77 @@
       "purpose": "any"
     }
   ],
+  "screenshots": [
+    {
+      "src": "screenshots/desktop-home.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "Portfolio Homepage"
+    },
+    {
+      "src": "screenshots/desktop-projects.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "Projects Section"
+    },
+    {
+      "src": "screenshots/mobile-home.png",
+      "sizes": "750x1334",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "Mobile Portfolio View"
+    }
+  ],
   "shortcuts": [
     {
       "name": "About Me",
       "url": "/#about",
-      "description": "Learn more about Adin Bešlagić"
+      "description": "Learn more about Adin Bešlagić",
+      "icons": [
+        {
+          "src": "icons/about-icon-96x96.png",
+          "sizes": "96x96",
+          "type": "image/png"
+        }
+      ]
     },
     {
       "name": "Projects",
       "url": "/#projects",
-      "description": "View my portfolio projects"
+      "description": "View my portfolio projects",
+      "icons": [
+        {
+          "src": "icons/projects-icon-96x96.png",
+          "sizes": "96x96",
+          "type": "image/png"
+        }
+      ]
     },
     {
       "name": "Skills",
       "url": "/#skills",
-      "description": "See my technical skills and expertise"
+      "description": "See my technical skills and expertise",
+      "icons": [
+        {
+          "src": "icons/skills-icon-96x96.png",
+          "sizes": "96x96",
+          "type": "image/png"
+        }
+      ]
     },
     {
       "name": "Contact",
       "url": "/#contact",
-      "description": "Get in touch with me"
+      "description": "Get in touch with me",
+      "icons": [
+        {
+          "src": "icons/contact-icon-96x96.png",
+          "sizes": "96x96",
+          "type": "image/png"
+        }
+      ]
     }
   ]
 }

@@ -7,7 +7,8 @@
     "build": "ng build",
     "build:ssr": "ng run CV:prerender",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "generate-screenshots": "node public/screenshots/screenshot.js"
   },
   "private": true,
   "dependencies": {
@@ -46,6 +47,7 @@
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
+    "puppeteer": "^24.10.2",
     "pwa-asset-generator": "^8.0.5",
     "typescript": "~5.8.3"
   }
