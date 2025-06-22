@@ -9,7 +9,7 @@
       <fa-icon [icon]="faMapMarker"></fa-icon> Maribor, Slovenia
     </p>
     <p class="company">
-      <fa-icon [icon]="faBuilding"></fa-icon> Resonate d.o.o.,
+      <fa-icon [icon]="faBuilding"></fa-icon> Resonate d.o.o.<br>
       Tuzla, Bosnia and Herzegovina
     </p>
 
@@ -20,13 +20,21 @@
     <ul>
       <li>
         <a href="mailto:beslagicadin@gmail.com">
-          <fa-icon [icon]="faEnvelope"></fa-icon> Email
+          <fa-icon [icon]="faEnvelope"></fa-icon> beslagicadin&#64;gmail.com
+        </a>
+      </li>
+      <li>
+        <a href="tel:+38765094079">
+          <fa-icon [icon]="faPhone"></fa-icon> +387 65 094 079
+          <span class="fi fi-ba"></span>
         </a>
       </li>
       <li>
         <a href="tel:+38669437424">
-          <fa-icon [icon]="faPhone"></fa-icon> Phone
+          <fa-icon [icon]="faPhone"></fa-icon> +386 69 437 424
+          <span class="fi fi-si"></span>
         </a>
+      </li>
       <li>
         <a href="https://github.com/beslagicadin" target="_blank">
           <fa-icon [icon]="faGithub"></fa-icon> GitHub
@@ -43,10 +51,18 @@
   <div class="skills">
     <h2>Skills</h2>
     @for (category of skillCategories; track category.name) {
-      <div class="skill-category">
-        <h3>{{ category.name }}</h3>
+      <div class="skill-category" (click)="toggleCategoryExpansion(category)" [class.expanded]="category.isExpanded">
+        <h3>
+          {{ category.name }} 
+          <span class="expansion-indicator">{{ category.isExpanded ? '−' : '+' }}</span>
+          @if (!category.isExpanded && getSkillCount(category) > 0) {
+            <span class="more-count">
+              +{{ getSkillCount(category) }} more
+            </span>
+          }
+        </h3>
         <div class="skill-tags">
-          @for (skill of category.skills; track skill) {
+          @for (skill of getVisibleSkills(category); track skill) {
             <span class="skill-tag">{{ skill }}</span>
           }
         </div>

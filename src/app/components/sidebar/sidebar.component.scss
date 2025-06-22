@@ -32,17 +32,16 @@
 
   /* Animation & Transitions */
   --transition-duration: var(--transition-speed, 0.25s);
-  --transition-base: all var(--transition-duration) cubic-bezier(0.215, 0.61, 0.355, 1);
-  --transition-pop: all var(--transition-duration) cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  --transition-transform: transform var(--transition-duration) cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  --transition-shadow: box-shadow var(--transition-duration) cubic-bezier(0.215, 0.61, 0.355, 1);
-  --transition-color: color var(--transition-duration) ease-out, background-color var(--transition-duration) ease-out;
+  --ease-out: cubic-bezier(0.215, 0.61, 0.355, 1);
+  --ease-pop: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  --transition-base: all var(--transition-duration) var(--ease-out);
+  --transition-pop: all var(--transition-duration) var(--ease-pop);
+  --transition-transform: transform var(--transition-duration) var(--ease-pop);
   --animation-stagger-base: 0.15s;
   --animation-stagger-tag: 0.05s;
 
   /* Performance */
-  --gpu-accelerate: translateZ(0);
-  --hardware-accelerate: translate3d(0, 0, 0);
+  --accelerate: translateZ(0); /* Consolidated GPU acceleration */
 
   /* Spacing */
   --section-spacing: 40px;
@@ -59,7 +58,7 @@
   box-shadow: 0 4px 6px var(--shadow-color);
   transition: var(--transition-shadow), var(--transition-color);
   width: 100%;
-  transform: var(--gpu-accelerate);
+  transform: var(--accelerate);
   backface-visibility: hidden;
   perspective: 1000px;
 }
@@ -83,13 +82,13 @@
   border-radius: 50%;
   margin: 0 auto;
   transition: var(--transition-transform), box-shadow 0.3s ease;
-  transform: var(--gpu-accelerate);
+  transform: var(--accelerate);
   box-shadow: 0 4px 10px var(--shadow-base);
   border: 2px solid var(--border-light);
   will-change: transform, box-shadow;
 
   &:hover {
-    transform: scale(1.05) var(--gpu-accelerate);
+    transform: scale(1.05) var(--accelerate);
     box-shadow: 0 6px 15px var(--shadow-hover);
   }
 }
@@ -136,11 +135,11 @@
   border-bottom: 2px solid var(--primary);
   transition: var(--transition-transform), var(--transition-color), border-bottom-width 0.2s ease;
   letter-spacing: 0.03em;
-  transform: var(--gpu-accelerate);
+  transform: var(--accelerate);
 
   &:hover {
     color: var(--primary);
-    transform: translateX(4px) var(--gpu-accelerate);
+    transform: translateX(4px) var(--accelerate);
     border-bottom-width: 3px;
     text-shadow: 0 1px 2px var(--shadow-base);
   }
@@ -161,7 +160,7 @@
   color: var(--text-color);
   text-decoration: none;
   transition: var(--transition-color);
-  transform: var(--gpu-accelerate);
+  transform: var(--accelerate);
 }
 
 .contact-info a:hover {
@@ -194,6 +193,7 @@
   margin-bottom: var(--category-spacing);
   padding: 16px 20px;
   border: 1px solid var(--border-light);
+  cursor: pointer;
   transition: var(--transition-transform), var(--transition-shadow), background-color 0.3s ease, border-color 0.3s ease;
   position: relative;
   border-radius: 16px;
@@ -202,7 +202,7 @@
   background-color: var(--card-background);
   box-shadow: 0 3px 8px var(--shadow-base);
   will-change: transform, box-shadow, border-color;
-  transform: var(--gpu-accelerate);
+  transform: var(--accelerate);
   backface-visibility: hidden;
 }
 
@@ -222,7 +222,27 @@
   letter-spacing: 0.02em;
   border-bottom: 1px solid var(--border-light);
   position: relative;
-  transform: var(--gpu-accelerate);
+  transform: var(--accelerate);
+  justify-content: space-between;
+}
+
+.expansion-indicator {
+  margin-left: 8px;
+  font-size: 1.2rem;
+  color: var(--primary-color);
+  line-height: 1;
+  transition: transform 0.3s ease;
+}
+
+.more-count {
+  margin-left: 8px;
+  font-size: 0.8rem;
+  color: var(--text-color-light);
+  font-weight: normal;
+}
+
+.skill-category.expanded .expansion-indicator {
+  transform: rotate(180deg);
 }
 
 .skill-category h3::before {
@@ -244,10 +264,9 @@
   flex-wrap: wrap;
   gap: var(--tag-gap);
   margin-left: 22px; /* Align with the category heading dot */
-  transition: var(--transition-transform);
   padding-bottom: 10px;
   padding-top: 6px;
-  transform: var(--gpu-accelerate);
+  transform: var(--accelerate);
 }
 
 .skill-tag {
@@ -266,16 +285,14 @@
   border: 1px solid var(--border-light);
   cursor: default;
   user-select: none;
-  line-height: 1.2;
-  letter-spacing: 0.01em;
+  line-height: 1.2; letter-spacing: 0.01em;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   position: relative;
   overflow: hidden;
   will-change: transform, box-shadow, background-color;
-  transform: var(--gpu-accelerate);
-  backface-visibility: hidden;
+  transform: var(--accelerate); backface-visibility: hidden;
 
   &::before {
     content: '';
@@ -285,7 +302,7 @@
     width: 100%;
     height: 100%;
     background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-    transform: translateX(-100%) var(--gpu-accelerate);
+    transform: translateX(-100%) var(--accelerate);
     transition: transform 0.6s ease;
     pointer-events: none;
     will-change: transform;
@@ -295,53 +312,54 @@
 .skill-tag:hover {
   background-color: var(--primary);
   color: white;
-  transform: translateY(-3px) scale(1.05) var(--gpu-accelerate);
+  transform: translateY(-3px) scale(1.05) var(--accelerate);
   box-shadow: 0 5px 15px var(--shadow-tag-hover);
   border-color: var(--primary);
 
   &::before {
-    transform: translateX(100%) var(--gpu-accelerate);
+    transform: translateX(100%) var(--accelerate);
   }
 }
 
-@media (min-width: 768px) {
-  .sidebar {
-    flex: 1;
-    position: sticky;
-    top: 40px;
-    align-self: flex-start;
-    max-width: min(35vw, 450px);
-    min-width: 20rem;
-    margin-right: clamp(20px, 3vw, 35px);
-    padding: clamp(30px, 3vw, 35px);
-    transition: max-width 0.3s ease, min-width 0.3s ease, margin-right 0.3s ease, padding 0.3s ease;
+  /* Responsive styles for sidebar */
+  @media (min-width: 768px) {
+    .sidebar {
+      flex: 1;
+      position: sticky;
+      top: 40px;
+      align-self: flex-start;
+      max-width: min(35vw, 450px);
+      min-width: 20rem;
+      margin-right: clamp(20px, 3vw, 35px);
+      padding: clamp(30px, 3vw, 35px);
+      transition: max-width 0.3s ease, min-width 0.3s ease, margin-right 0.3s ease, padding 0.3s ease;
+    }
   }
-}
 
-@media (min-width: 992px) {
-  .sidebar {
-    max-width: min(32vw, 500px);
-    min-width: 22rem;
+  @media (min-width: 992px) {
+    .sidebar {
+      max-width: min(32vw, 500px);
+      min-width: 22rem;
+    }
   }
-}
 
-@media (min-width: 1400px) {
-  .sidebar {
-    max-width: min(30vw, 550px);
-    min-width: 25rem;
-    padding: clamp(32px, 2.5vw, 38px);
-    margin-right: clamp(25px, 2.5vw, 40px);
+  @media (min-width: 1400px) {
+    .sidebar {
+      max-width: min(30vw, 550px);
+      min-width: 25rem;
+      padding: clamp(32px, 2.5vw, 38px);
+      margin-right: clamp(25px, 2.5vw, 40px);
+    }
   }
-}
 
-@media (min-width: 1800px) {
-  .sidebar {
-    max-width: min(28vw, 600px);
-    min-width: 28rem;
-    padding: clamp(35px, 2vw, 40px);
-    margin-right: clamp(30px, 2vw, 45px);
+  @media (min-width: 1800px) {
+    .sidebar {
+      max-width: min(28vw, 600px);
+      min-width: 28rem;
+      padding: clamp(35px, 2vw, 40px);
+      margin-right: clamp(30px, 2vw, 45px);
+    }
   }
-}
 
 @media (max-width: 767px) {
   .sidebar {
@@ -399,22 +417,22 @@
 .skill-category:hover {
   background-color: var(--hover-background);
   box-shadow: 0 5px 15px var(--shadow-hover);
-  transform: translateY(-3px) scale(1.01) var(--gpu-accelerate);
+  transform: translateY(-3px) scale(1.01) var(--accelerate);
   border-color: var(--primary);
 
   h3::before {
-    transform: scale(1.25) var(--gpu-accelerate);
+    transform: scale(1.25) var(--accelerate);
     box-shadow: 0 3px 8px var(--shadow-hover);
     background-color: var(--primary);
   }
 
   h3 {
     color: var(--primary);
-    transform: translateX(2px) var(--gpu-accelerate);
+    transform: translateX(2px) var(--accelerate);
   }
 
   .skill-tags {
-    transform: translateX(2px) var(--gpu-accelerate);
+    transform: translateX(2px) var(--accelerate);
   }
 }
 
@@ -422,70 +440,65 @@
 .skill-tag:focus-visible {
   outline: 2px solid var(--primary);
   outline-offset: 2px;
-  transform: translateY(-2px) var(--gpu-accelerate);
+  transform: translateY(-2px) var(--accelerate);
   box-shadow: 0 5px 10px var(--shadow-tag-hover);
 }
 
 /* Dark mode specific adjustments */
 :host-context(body.dark-theme) {
+  /* Apply dark theme variables to common elements */
   .avatar {
     border-color: var(--border-dark);
     box-shadow: 0 4px 12px var(--shadow-base-dark);
-
-    &:hover {
-      box-shadow: 0 6px 18px var(--shadow-hover-dark);
-    }
+    
+    &:hover { box-shadow: 0 6px 18px var(--shadow-hover-dark); }
   }
 
+  /* Headings in dark mode */
   .contact-info h2, .github-stats h2, .skills h2 {
     border-bottom-color: var(--primary-dark);
-
+    
     &:hover {
       color: var(--primary-dark);
       text-shadow: 0 1px 3px var(--shadow-base-dark);
     }
   }
 
+  /* Skill categories in dark mode */
   .skill-category {
     border-color: var(--border-dark);
     box-shadow: 0 3px 10px var(--shadow-base-dark);
-
+    
     &:hover {
       background-color: var(--hover-background-dark);
       border-color: var(--primary-dark);
       box-shadow: 0 6px 18px var(--shadow-hover-dark);
     }
-
+    
     h3 {
       border-bottom-color: var(--border-dark);
-
-      &::before {
+      &::before { 
         background-color: var(--primary-dark);
         box-shadow: 0 2px 5px var(--shadow-tag-dark);
       }
     }
   }
 
+  /* Skill tags in dark mode */
   .skill-tag {
     background-color: var(--tag-background-dark);
     color: var(--text-dark);
     border-color: var(--border-dark);
     box-shadow: 0 2px 6px var(--shadow-tag-dark);
-
+    
     &:hover {
       background-color: var(--primary-dark);
       box-shadow: 0 5px 15px var(--shadow-tag-hover-dark);
       border-color: var(--primary-dark);
     }
-
-    &::before {
-      background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.1), transparent);
-    }
-
-    &:focus-visible {
-      outline: 2px solid var(--primary-dark);
-      outline-offset: 2px;
-    }
+    
+    &::before { background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.1), transparent); }
+    &:focus-visible { outline-color: var(--primary-dark); }
   }
 }
 
@@ -493,18 +506,19 @@
 @keyframes skillTagAppear {
   from {
     opacity: 0;
-    transform: translateY(15px) var(--gpu-accelerate);
+    transform: translateY(15px) var(--accelerate);
   }
   to {
     opacity: 1;
-    transform: translateY(0) var(--gpu-accelerate);
+    transform: translateY(0) var(--accelerate);
   }
 }
 
 .skill-tag {
   animation: skillTagAppear 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
   animation-delay: calc(var(--index, 0) * var(--animation-stagger-tag) + 0.1s); /* Adding base delay after parent appears */
-  opacity: 0;
+  opacity: 1; /* Show skills immediately */
+  display: inline-block;
   contain: layout style; /* Improve performance by reducing paint area */
 }
 
@@ -518,12 +532,12 @@
 @keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateY(20px) var(--gpu-accelerate);
+    transform: translateY(20px) var(--accelerate);
     filter: blur(2px);
   }
   to {
     opacity: 1;
-    transform: translateY(0) var(--gpu-accelerate);
+    transform: translateY(0) var(--accelerate);
     filter: blur(0);
   }
 }
@@ -533,6 +547,31 @@
   contain: content;
 }
 
+/* Skill tag container transition for smooth expansion/collapse */
+.skill-tags {
+  transition: all 0.3s ease-in-out;
+  min-height: 30px;
+}
+
+/* Add visual feedback for clickable categories */
+.skill-category:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--primary-color);
+  transition: width 0.3s ease;
+  z-index: 1;
+}
+
+.skill-category:hover:after {
+  width: 100%;
+}
+
+
+/* Improve performance by isolating rendering layers */
 .skill-category {
   contain: layout style;
 }
