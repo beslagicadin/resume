@@ -1,12 +1,18 @@
 # robots.txt for Adin Beslagic's portfolio website
+
+# Rules for Googlebot specifically
+User-agent: Googlebot
+Allow: /
+# Disallow duplicate content
+Disallow: /assets/raw/
+
+# Rules for all other crawlers
 User-agent: *
 Allow: /
-
 # Set crawl delay to prevent server overload
 Crawl-delay: 10
+# Disallow duplicate content
+Disallow: /assets/raw/
 
 # Point to sitemap
 Sitemap: https://beslagicadin.vercel.app/sitemap.xml
-
-# Disallow duplicate content
-Disallow: /assets/raw/
