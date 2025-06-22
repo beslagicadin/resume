@@ -1,0 +1,12 @@
+# robots.txt for Adin Beslagic's portfolio website
+User-agent: *
+Allow: /
+
+# Set crawl delay to prevent server overload
+Crawl-delay: 10
+
+# Point to sitemap
+Sitemap: https://beslagicadin.vercel.app/sitemap.xml
+
+# Disallow duplicate content
+Disallow: /assets/raw/

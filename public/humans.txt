@@ -1,0 +1,23 @@
+/* TEAM */
+	Developer: Adin Bešlagić
+	Contact: beslagicadin [at] gmail.com
+	GitHub: https://github.com/beslagicadin
+	LinkedIn: https://www.linkedin.com/in/beslagicadin/
+	Location:  Maribor, Slovenia
+
+/* SITE */
+	Last update: 2025-06-22
+	Standards: HTML5, CSS3, JavaScript
+	Components: Angular, TypeScript, RxJS
+	Software: Visual Studio Code, Git, npm
+
+/* TECHNOLOGIES */
+	Language: TypeScript, JavaScript
+	Framework: Angular
+	CSS: SCSS
+	Hosting: Vercel
+	Version Control: Git
+	CI/CD: GitHub Actions
+
+/* THANKS */
+	Open Source Community

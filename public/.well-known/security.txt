@@ -1,0 +1,13 @@
+# Security Policy for beslagicadin.vercel.app
+# Last Updated: 2025-06-22
+
+Contact: mailto:beslagicadin@gmail.com
+Expires: 2026-06-22T21:00:00.000Z
+Preferred-Languages: en, bs
+Canonical: https://beslagicadin.vercel.app/.well-known/security.txt
+Policy: https://beslagicadin.vercel.app/security-policy
+Hiring: https://beslagicadin.vercel.app/#contact
+Acknowledgments: https://beslagicadin.vercel.app/security-acknowledgments
+
+# Please report security issues responsibly
+# Thank you for helping to keep this site secure

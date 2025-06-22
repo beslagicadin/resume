@@ -37,24 +37,27 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:application",
+          "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "browser": "src/main.ts",
+            "outputPath": "dist/CV",
+            "index": "src/index.html",
+            "main": "src/main.ts",
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
               {
                 "glob": "**/*",
-                "input": "public"
-              }
+                "input": "public",
+                "output": "/"
+              },
+              "src/favicon.ico",
+              "src/assets",
+              "src/manifest.webmanifest",
+              "src/manifest.json"
             ],
             "styles": [
               "src/styles.scss"
-            ],
-            "server": "src/main.server.ts",
-            "ssr": {
-              "entry": "src/server.ts"
-            }
+            ]
           },
           "configurations": {
             "production": {
@@ -70,7 +73,9 @@
                   "maximumError": "15kB"
                 }
               ],
-              "outputHashing": "all"
+              "outputHashing": "all",
+              "serviceWorker": true,
+              "ngswConfigPath": "ngsw-config.json"
             },
             "development": {
               "optimization": false,
@@ -111,57 +116,20 @@
             ]
           }
         },
-        "server": {
-          "builder": "@angular-devkit/build-angular:server",
+        "app-shell": {
+          "builder": "@angular-devkit/build-angular:app-shell",
           "options": {
-            "outputPath": "dist/CV/server",
-            "main": "src/main.server.ts",
-            "tsConfig": "tsconfig.server.json"
+            "route": "shell"
           },
           "configurations": {
             "production": {
-              "outputHashing": "media"
+              "browserTarget": "CV:build:production"
             },
             "development": {
-              "optimization": false,
-              "sourceMap": true,
-              "extractLicenses": false
+              "browserTarget": "CV:build:development"
             }
           },
           "defaultConfiguration": "production"
-        },
-        "prerender": {
-          "builder": "@angular-devkit/build-angular:prerender",
-          "options": {
-            "routes": [
-              "/"
-            ]
-          },
-          "configurations": {
-            "production": {
-              "browserTarget": "CV:build:production",
-              "serverTarget": "CV:server:production"
-            },
-            "development": {
-              "browserTarget": "CV:build:development",
-              "serverTarget": "CV:server:development"
-            }
-          },
-          "defaultConfiguration": "production"
-        },
-        "ssr-dev-server": {
-          "builder": "@angular-devkit/build-angular:ssr-dev-server",
-          "configurations": {
-            "development": {
-              "browserTarget": "CV:build:development",
-              "serverTarget": "CV:server:development"
-            },
-            "production": {
-              "browserTarget": "CV:build:production",
-              "serverTarget": "CV:server:production"
-            }
-          },
-          "defaultConfiguration": "development"
         }
       }
     }
