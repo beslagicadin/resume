@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio - Mobile Home</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: #f5f5f5;
+    }
+    header {
+      background-color: #1976d2;
+      color: white;
+      padding: 16px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    .container {
+      padding: 16px;
+    }
+    h1 {
+      font-size: 1.8rem;
+      margin: 0;
+    }
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .menu-button {
+      background: none;
+      border: none;
+      color: white;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+    .hero {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 0;
+      text-align: center;
+    }
+    .hero h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: #1976d2;
+    }
+    .hero p {
+      font-size: 1.1rem;
+      color: #333;
+      margin: 0 auto 1.5rem;
+    }
+    .button {
+      background-color: #1976d2;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 1rem;
+      display: inline-block;
+    }
+    .section {
+      padding: 30px 0;
+      border-bottom: 1px solid #eee;
+    }
+    .section h3 {
+      font-size: 1.5rem;
+      color: #333;
+      margin-bottom: 1rem;
+    }
+    .profile-image {
+      width: 120px;
+      height: 120px;
+      border-radius: 60px;
+      background-color: #1976d2;
+      margin: 0 auto 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: bold;
+    }
+    .bottom-nav {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: white;
+      display: flex;
+      justify-content: space-around;
+      padding: 10px 0;
+      box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+    }
+    .nav-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-decoration: none;
+      color: #666;
+      font-size: 0.8rem;
+    }
+    .nav-item.active {
+      color: #1976d2;
+    }
+    .icon {
+      font-size: 1.5rem;
+      margin-bottom: 4px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <h1>Portfolio</h1>
+      <button class="menu-button">☰</button>
+    </nav>
+  </header>
+  
+  <div class="container">
+    <div class="hero">
+      <div class="profile-image">AB</div>
+      <h2>Adin</h2>
+      <p>Web Developer & Designer</p>
+      <a href="#projects" class="button">View My Work</a>
+    </div>
+    
+    <div id="about" class="section">
+      <h3>About Me</h3>
+      <p>Experienced web developer with a passion for creating clean, efficient, and user-friendly websites.</p>
+    </div>
+    
+    <div id="skills" class="section">
+      <h3>Skills</h3>
+      <p>Angular, JavaScript, TypeScript, HTML5, CSS3, Responsive Design, PWA, SEO</p>
+    </div>
+    
+    <div style="height: 70px;"></div> <!-- Space for fixed bottom nav -->
+  </div>
+  
+  <div class="bottom-nav">
+    <a href="#" class="nav-item active">
+      <div class="icon">•</div>
+      Home
+    </a>
+    <a href="#" class="nav-item">
+      <div class="icon">•</div>
+      Projects
+    </a>
+    <a href="#" class="nav-item">
+      <div class="icon">•</div>
+      Skills
+    </a>
+    <a href="#" class="nav-item">
+      <div class="icon">•</div>
+      Contact
+    </a>
+  </div>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mobile Home Screenshot</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      height: 100%;
+      width: 100%;
+    }
+    .container {
+      width: 750px;
+      height: 1334px;
+      overflow: hidden;
+      position: relative;
+      background-color: #f8f9fa;
+    }
+    header {
+      background-color: #0078ff;
+      color: white;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .logo {
+      font-size: 20px;
+      font-weight: bold;
+    }
+    .menu-button {
+      width: 30px;
+      height: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      cursor: pointer;
+    }
+    .menu-button span {
+      width: 100%;
+      height: 3px;
+      background-color: white;
+      border-radius: 3px;
+    }
+    .mobile-nav {
+      background-color: #0067e0;
+      color: white;
+      padding: 15px 0;
+    }
+    .mobile-nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .mobile-nav ul li {
+      padding: 12px 20px;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    .mobile-nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      display: block;
+    }
+    .hero {
+      height: 400px;
+      background: linear-gradient(rgba(0,120,255,0.8), rgba(0,120,255,0.6)), url('background.jpg');
+      background-size: cover;
+      background-position: center;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 0 20px;
+    }
+    .hero-content {
+      width: 100%;
+    }
+    .hero h1 {
+      font-size: 36px;
+      margin-bottom: 15px;
+    }
+    .hero p {
+      font-size: 16px;
+      margin-bottom: 25px;
+    }
+    .btn {
+      display: inline-block;
+      background-color: white;
+      color: #0078ff;
+      padding: 12px 30px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: all 0.3s;
+    }
+    .content-section {
+      padding: 30px 20px;
+    }
+    .section-title {
+      text-align: center;
+      margin-bottom: 25px;
+      color: #333;
+    }
+    .section-title h2 {
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+    .section-title p {
+      color: #666;
+    }
+    .about-card {
+      background-color: white;
+      border-radius: 8px;
+      padding: 25px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+      margin-bottom: 25px;
+    }
+    .about-card h3 {
+      color: #0078ff;
+      margin-top: 0;
+    }
+    .skills-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 15px;
+    }
+    .skill-pill {
+      background-color: #e9f0ff;
+      color: #0078ff;
+      padding: 8px 15px;
+      border-radius: 20px;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo">Adin Beslagic</div>
+      <div class="menu-button">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </header>
+    
+    <div class="mobile-nav">
+      <ul>
+        <li><a href="#about">About Me</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+    
+    <div class="hero">
+      <div class="hero-content">
+        <h1>Adin Beslagic</h1>
+        <p>Software Developer & Engineer specializing in modern web technologies</p>
+        <a href="#projects" class="btn">View My Work</a>
+      </div>
+    </div>
+    
+    <div class="content-section">
+      <div class="section-title">
+        <h2>About Me</h2>
+        <p>A brief introduction</p>
+      </div>
+      
+      <div class="about-card">
+        <h3>Background</h3>
+        <p>Software developer with experience in building modern web applications. Passionate about creating clean, efficient, and user-friendly experiences.</p>
+      </div>
+      
+      <div class="about-card">
+        <h3>Skills</h3>
+        <p>Specialized in frontend and backend development with expertise in:</p>
+        <div class="skills-list">
+          <span class="skill-pill">JavaScript</span>
+          <span class="skill-pill">TypeScript</span>
+          <span class="skill-pill">Angular</span>
+          <span class="skill-pill">React</span>
+          <span class="skill-pill">Node.js</span>
+          <span class="skill-pill">HTML/CSS</span>
+        </div>
+      </div>
+      
+      <div class="about-card">
+        <h3>Education</h3>
+        <p>Bachelor's Degree in Computer Science with focus on web technologies and software engineering principles.</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

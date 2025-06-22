@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PWA Screenshot Templates</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      line-height: 1.6;
+    }
+    h1 {
+      color: #0078ff;
+      border-bottom: 2px solid #0078ff;
+      padding-bottom: 10px;
+    }
+    h2 {
+      margin-top: 30px;
+      color: #333;
+    }
+    p {
+      color: #555;
+    }
+    ul {
+      margin-bottom: 30px;
+    }
+    li {
+      margin-bottom: 10px;
+    }
+    .links {
+      margin-top: 20px;
+    }
+    .links a {
+      display: inline-block;
+      margin-right: 15px;
+      color: #0078ff;
+      text-decoration: none;
+      padding: 5px 0;
+    }
+    .links a:hover {
+      text-decoration: underline;
+    }
+    .note {
+      background-color: #f8f9fa;
+      border-left: 4px solid #0078ff;
+      padding: 15px;
+      margin: 20px 0;
+    }
+    code {
+      background-color: #f1f1f1;
+      padding: 2px 5px;
+      border-radius: 3px;
+      font-family: monospace;
+    }
+  </style>
+</head>
+<body>
+  <h1>PWA Screenshot Templates</h1>
+  
+  <p>This directory contains templates for the screenshots used in the PWA manifest. These screenshots enhance the installation experience of the PWA by providing visual previews in the installation prompt.</p>
+  
+  <h2>Available Templates</h2>
+  
+  <ul>
+    <li><strong>desktop-home.html/png</strong> - Desktop view of the homepage (1280x720)</li>
+    <li><strong>desktop-projects.html/png</strong> - Desktop view of the projects section (1280x720)</li>
+    <li><strong>mobile-home.html/png</strong> - Mobile view of the homepage (750x1334)</li>
+  </ul>
+  
+  <div class="note">
+    <p><strong>Note:</strong> The HTML files serve as templates that can be converted to PNG images using the provided conversion script. The actual PNG files are referenced in the PWA manifest.</p>
+  </div>
+  
+  <h2>How to Use</h2>
+  
+  <p>To convert the HTML templates to PNG screenshots:</p>
+  
+  <ol>
+    <li>Make sure you have either wkhtmltoimage, Chrome/Chromium, or ImageMagick installed</li>
+    <li>Run the conversion script: <code>bash convert-screenshots.sh</code></li>
+    <li>The generated PNG files will be used by the PWA manifest</li>
+  </ol>
+  
+  <p>Alternatively, you can open the HTML files in a browser and take screenshots manually.</p>
+  
+  <h2>Customization</h2>
+  
+  <p>Feel free to modify the HTML templates to better match your portfolio's design:</p>
+  
+  <ul>
+    <li>Change colors, fonts, and layout in the CSS</li>
+    <li>Update content to reflect your actual portfolio information</li>
+    <li>Add your logo or personal branding elements</li>
+  </ul>
+  
+  <p>After making changes, re-run the conversion script to update the PNG files.</p>
+  
+  <div class="links">
+    <a href="desktop-home.html">View Desktop Home Template</a>
+    <a href="desktop-projects.html">View Desktop Projects Template</a>
+    <a href="mobile-home.html">View Mobile Home Template</a>
+  </div>
+</body>
+</html>
