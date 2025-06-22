@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { injectSpeedInsights } from '@vercel/speed-insights';
 
 // Services
 import { ThemeService } from './services/theme.service';
@@ -29,5 +30,6 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     // Initialize application
     // console.log('CV application initialized');
+    injectSpeedInsights();
   }
 }
