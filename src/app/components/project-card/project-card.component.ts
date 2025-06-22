@@ -3,6 +3,7 @@ import { CommonModule, NgStyle } from '@angular/common';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { Project } from '../../models/project.model';
 import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons';
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
 
 @Component({
@@ -17,6 +18,7 @@ export class ProjectCardComponent implements OnInit {
   @Input() animationDelay: number = 0;
 
   faExternalLink = faExternalLinkAlt;
+  faGithub = faGithub;
   animationStyle: Record<string, string> = {};
 
   // Map languages to their corresponding image URLs

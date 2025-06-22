@@ -203,13 +203,16 @@ p::-webkit-scrollbar-thumb {
   color: var(--primary-color);
   text-decoration: none;
   font-weight: 500;
-  transition: color var(--transition-speed), transform var(--transition-speed);
-  padding: 0.5rem 0;
+  transition: color var(--transition-speed), transform var(--transition-speed), border-color var(--transition-speed);
+  padding: 0.5rem 0.75rem;
   position: relative;
+  border: 1px solid var(--primary-color);
+  border-radius: 4px;
 }
 
 .project-link:hover {
   color: var(--secondary-color);
+  border-color: var(--secondary-color);
   transform: translateX(3px);
 }
 

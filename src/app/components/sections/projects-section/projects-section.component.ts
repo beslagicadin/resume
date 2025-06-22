@@ -1,8 +1,7 @@
 import {Component} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {Project} from '../../../models/project.model';
 import {ProjectCardComponent} from '../../project-card/project-card.component';
-import {projects} from '../../../data/projects.data';
+import {projects} from '@app/data/projects.data';
 
 @Component({
   selector: 'app-projects-section',

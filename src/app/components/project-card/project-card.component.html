@@ -5,15 +5,26 @@
   <div class="technologies">
     @for (tech of project.technologies; track tech) {
       <span [class]="'technology-badge ' + getLanguageClass(tech)">
-        <img [src]="getLanguageIconUrl(tech)" 
-             [alt]="tech + ' icon'" 
+        <img [src]="getLanguageIconUrl(tech)"
+             [alt]="tech + ' icon'"
              class="technology-icon">
         <span class="technology-text">{{ tech }}</span>
       </span>
     }
   </div>
   <p>{{ project.description }}</p>
-  <a [href]="project.repoUrl" class="project-link" target="_blank">
-    View Project <fa-icon [icon]="faExternalLink"></fa-icon>
-  </a>
+
+  <!-- Show Live Preview link if previewUrl exists -->
+  @if (project.previewUrl) {
+    <a [href]="project.previewUrl" class="project-link" target="_blank">
+      Live Preview <fa-icon [icon]="faExternalLink"></fa-icon>
+    </a>
+  }
+
+  <!-- Show Repository link if repoUrl exists -->
+  @if (project.repoUrl) {
+    <a [href]="project.repoUrl" class="project-link" target="_blank">
+      Check out the project repository <fa-icon [icon]="faGithub"></fa-icon>
+    </a>
+  }
 </div>

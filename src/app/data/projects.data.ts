@@ -2,6 +2,24 @@ import {Project} from '../models/project.model';
 
 export const projects: Project[] = [
     {
+      name: 'CEC Bank Mobile Banking',
+      description: 'Contributed to the development of the CEC Bank mobile banking application, focusing on implementing higher security, better user experience, and intuitive account management interfaces. Collaborated with cross-functional teams to ensure compliance with banking regulations and security protocols while delivering a responsive and user-friendly mobile experience.',
+      technologies: ['Android', 'Java'],
+      previewUrl: 'https://play.google.com/store/apps/details?id=hr.asseco.android.jimba.cecro'
+    },
+    {
+      name: 'NLB mKlik',
+      description: 'Played a role in maintaining the NLB mKlik mobile banking application, fixing mostly UI and API issues related to the account transfers and current states.',
+      technologies: ['Android', 'Java'],
+      previewUrl: 'https://play.google.com/store/apps/details?id=hr.asseco.android.jimba.KomBank'
+    },
+    {
+      name: 'Sasvim lične finansije',
+      description: 'Designed and developed a responsive landing page for a small business financial consultancy, featuring custom animations, contact form integration, and SEO optimization.',
+      technologies: ['HTML', 'CSS', 'JavaScript'],
+      previewUrl: 'https://sasvim-licne-finansije.onrender.com'
+    },
+    {
       name: 'ToDoListApp',
       description: 'ToDo List App with Jira Integration - Assignment Project',
       technologies: ['React Native', 'Firebase'],
@@ -17,19 +35,19 @@ export const projects: Project[] = [
       name: 'E70AB',
       description: 'HTML+CSS static web site',
       technologies: ['HTML', 'CSS'],
-      repoUrl: 'https://beslagicadin.github.io/e70ab/'
+      previewUrl: 'https://beslagicadin.github.io/e70ab/'
     },
     {
       name: 'think-big',
       description: 'A project utilizing SCSS for styling',
       technologies: ['Angular'],
-      repoUrl: 'thinkbigacademy.net'
+      previewUrl: 'https://thinkbigacademy.net'
     },
     {
       name: 'dmr-tz',
       description: 'Python project with Flask for a web application',
       technologies: ['Python', 'Flask'],
-      repoUrl: 'https://dmr-tz.onrender.com/'
+      previewUrl: 'https://dmr-tz.onrender.com/'
     },
     {
       name: "BusArrivalDisplay",

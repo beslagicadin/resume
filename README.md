@@ -10,22 +10,12 @@ This is an Angular project for a CV/portfolio website.
 ### Setup
 1. Clone this repository
 2. Run `npm install` to install dependencies
-3. Run `npm run generate-favicon` to create the favicon
 4. Run `npm start` to start the development server
 
 ### Building for Production
 ```
 npm run build
 ```
-
-## Favicon Generation
-The project includes a script to generate a favicon with the letter "A" on a deep blue background:
-
-```
-npm run generate-favicon
-```
-
-This will create a favicon.ico file in the public directory, which is included in the build assets.
 
 ## Deployment
 This project is configured for Netlify deployment with Server-Side Rendering (SSR).
