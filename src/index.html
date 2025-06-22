@@ -16,14 +16,13 @@
   <link rel="canonical" href="https://beslagicadin.vercel.app">
   
   <!-- PWA Manifest -->
-  <link rel="manifest" href="manifest.json">
   <meta name="theme-color" content="#0078ff">
   
   <!-- Author Information -->
   <link rel="author" href="humans.txt">
   
   <!-- PWA Support -->
-  <meta name="apple-touch-startup-image" content="/icons/apple-splash-2048-2732.jpg" media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+  <!-- No apple-touch-startup-image as we don't have splash screens defined yet -->
 
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
@@ -116,7 +115,7 @@
     ]
   }
   </script>
-  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="manifest" href="manifest.webmanifest" crossorigin="use-credentials">
 </head>
 <body>
   <app-root></app-root>
