@@ -23,7 +23,7 @@ export class ProjectCardComponent implements OnInit {
 
   // Map languages to their corresponding image URLs
   languageIconUrls: Record<string, string> = {
-    'angular': '/assets/icons/angular-icon.png',
+    'angular': '/assets/icons/angular-original.svg',
     'react': '/assets/icons/react-original.svg',
     'react native': '/assets/icons/react-original.svg',
     'python': '/assets/icons/python-original.svg',
@@ -31,7 +31,7 @@ export class ProjectCardComponent implements OnInit {
     'html': '/assets/icons/html5-original-wordmark.svg',
     'html and css': '/assets/icons/html5-original-wordmark.svg',
     'php': '/assets/icons/php-original.svg',
-    'java': '/assets/icons/java.svg',
+    'java': '/assets/icons/java-original.svg',
     'javascript': '/assets/icons/javascript-original.svg',
     'typescript': '/assets/icons/typescript-original.svg',
     'css': '/assets/icons/css3-original-wordmark.svg',
@@ -107,6 +107,6 @@ export class ProjectCardComponent implements OnInit {
   getLanguageIconUrl(technology: string): string {
     const techLower = technology.toLowerCase();
     // Return a default git icon if the technology is not found in our map
-    return this.languageIconUrls[techLower] || '/assets/icons/git-icon.svg';
+    return this.languageIconUrls[techLower] || '/assets/icons/git-original.svg';
   }
 }
