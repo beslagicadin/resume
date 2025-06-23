@@ -20,6 +20,7 @@ export class ProjectCardComponent implements OnInit {
   faExternalLink = faExternalLinkAlt;
   faGithub = faGithub;
   animationStyle: Record<string, string> = {};
+  basePath: string = '';
 
   // Map languages to their corresponding image URLs
   languageIconUrls: Record<string, string> = {
@@ -59,6 +60,13 @@ export class ProjectCardComponent implements OnInit {
     this.animationStyle = {
       'animation-delay': `${this.animationDelay * 0.1}s`
     };
+
+    // Get the base path from the base href tag
+    const baseTag = document.querySelector('base');
+    if (baseTag && baseTag.getAttribute('href')) {
+      // Remove trailing slash if present
+      this.basePath = baseTag.getAttribute('href')!.replace(/\/$/, '');
+    }
   }
 
   /**
@@ -107,6 +115,13 @@ export class ProjectCardComponent implements OnInit {
   getLanguageIconUrl(technology: string): string {
     const techLower = technology.toLowerCase();
     // Return a default git icon if the technology is not found in our map
-    return this.languageIconUrls[techLower] || '/assets/icons/git.svg';
+    const iconPath = this.languageIconUrls[techLower] || '/assets/icons/git.svg';
+    
+    // If the path starts with '/' and we have a base path, prepend the base path
+    if (iconPath.startsWith('/') && this.basePath) {
+      return `${this.basePath}${iconPath}`;
+    }
+    
+    return iconPath;
   }
 }
