@@ -23,36 +23,36 @@ export class ProjectCardComponent implements OnInit {
 
   // Map languages to their corresponding image URLs
   languageIconUrls: Record<string, string> = {
-    'angular': 'https://res.cloudinary.com/rangle/image/upload/q_auto,f_auto/rangle.io/mrigk1uezwyxxftiewxg.png',
-    'react': 'https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg',
-    'react native': 'https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg',
-    'python': 'https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg',
-    'flask': 'https://raw.githubusercontent.com/devicons/devicon/master/icons/flask/flask-original.svg',
-    'html': 'https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg',
-    'html and css': 'https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg',
-    'php': 'https://raw.githubusercontent.com/devicons/devicon/master/icons/php/php-original.svg',
-    'java': 'https://raw.githubusercontent.com/gilbarbara/logos/cf1dcda31feaae79d0b0efa5218aa0baa11b2f94/logos/java.svg',
-    'javascript': 'https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg',
-    'typescript': 'https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg',
-    'css': 'https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg',
-    'vue': 'https://raw.githubusercontent.com/devicons/devicon/master/icons/vuejs/vuejs-original.svg',
-    'vue.js': 'https://raw.githubusercontent.com/devicons/devicon/master/icons/vuejs/vuejs-original.svg',
-    'node': 'https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original.svg',
-    'node.js': 'https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original.svg',
-    'c#': 'https://raw.githubusercontent.com/devicons/devicon/master/icons/csharp/csharp-original.svg',
-    'visual c#': 'https://raw.githubusercontent.com/devicons/devicon/master/icons/csharp/csharp-original.svg',
-    'c++': 'https://raw.githubusercontent.com/devicons/devicon/master/icons/cplusplus/cplusplus-original.svg',
-    'c': 'https://raw.githubusercontent.com/devicons/devicon/master/icons/c/c-original.svg',
-    'android': 'https://raw.githubusercontent.com/gilbarbara/logos/cf1dcda31feaae79d0b0efa5218aa0baa11b2f94/logos/android-vertical.svg',
-    'spring boot': 'https://raw.githubusercontent.com/devicons/devicon/master/icons/spring/spring-original.svg',
-    'spring security': 'https://raw.githubusercontent.com/devicons/devicon/master/icons/spring/spring-original.svg',
-    'mysql': 'https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original.svg',
-    'firebase': 'https://raw.githubusercontent.com/devicons/devicon/master/icons/firebase/firebase-original.svg',
-    'qt': 'https://raw.githubusercontent.com/devicons/devicon/master/icons/qt/qt-original.svg',
-    '.net framework': 'https://raw.githubusercontent.com/devicons/devicon/master/icons/dot-net/dot-net-original.svg',
-    'winforms': 'https://raw.githubusercontent.com/devicons/devicon/master/icons/dot-net/dot-net-original.svg',
-    'scss': 'https://raw.githubusercontent.com/devicons/devicon/master/icons/sass/sass-original.svg',
-    'arduino': 'https://raw.githubusercontent.com/devicons/devicon/master/icons/arduino/arduino-original.svg'
+    'angular': '/assets/icons/angular-icon.png',
+    'react': '/assets/icons/react-original.svg',
+    'react native': '/assets/icons/react-original.svg',
+    'python': '/assets/icons/python-original.svg',
+    'flask': '/assets/icons/flask-original.svg',
+    'html': '/assets/icons/html5-original-wordmark.svg',
+    'html and css': '/assets/icons/html5-original-wordmark.svg',
+    'php': '/assets/icons/php-original.svg',
+    'java': '/assets/icons/java.svg',
+    'javascript': '/assets/icons/javascript-original.svg',
+    'typescript': '/assets/icons/typescript-original.svg',
+    'css': '/assets/icons/css3-original-wordmark.svg',
+    'vue': '/assets/icons/vuejs-original.svg',
+    'vue.js': '/assets/icons/vuejs-original.svg',
+    'node': '/assets/icons/nodejs-original.svg',
+    'node.js': '/assets/icons/nodejs-original.svg',
+    'c#': '/assets/icons/csharp-original.svg',
+    'visual c#': '/assets/icons/csharp-original.svg',
+    'c++': '/assets/icons/cplusplus-original.svg',
+    'c': '/assets/icons/c-original.svg',
+    'android': '/assets/icons/android-vertical.svg',
+    'spring boot': '/assets/icons/spring-original.svg',
+    'spring security': '/assets/icons/spring-original.svg',
+    'mysql': '/assets/icons/mysql-original.svg',
+    'firebase': '/assets/icons/firebase-original.svg',
+    'qt': '/assets/icons/qt-original.svg',
+    '.net framework': '/assets/icons/dot-net-original.svg',
+    'winforms': '/assets/icons/dot-net-original.svg',
+    'scss': '/assets/icons/sass-original.svg',
+    'arduino': '/assets/icons/arduino-original.svg'
   };
 
   ngOnInit() {
@@ -107,6 +107,6 @@ export class ProjectCardComponent implements OnInit {
   getLanguageIconUrl(technology: string): string {
     const techLower = technology.toLowerCase();
     // Return a default git icon if the technology is not found in our map
-    return this.languageIconUrls[techLower] || 'https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg';
+    return this.languageIconUrls[techLower] || '/assets/icons/git-icon.svg';
   }
 }
