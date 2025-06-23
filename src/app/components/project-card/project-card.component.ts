@@ -23,36 +23,36 @@ export class ProjectCardComponent implements OnInit {
 
   // Map languages to their corresponding image URLs
   languageIconUrls: Record<string, string> = {
-    'angular': '/assets/icons/angular-original.svg',
-    'react': '/assets/icons/react-original.svg',
-    'react native': '/assets/icons/react-original.svg',
-    'python': '/assets/icons/python-original.svg',
-    'flask': '/assets/icons/flask-original.svg',
-    'html': '/assets/icons/html5-original-wordmark.svg',
-    'html and css': '/assets/icons/html5-original-wordmark.svg',
-    'php': '/assets/icons/php-original.svg',
-    'java': '/assets/icons/java-original.svg',
-    'javascript': '/assets/icons/javascript-original.svg',
-    'typescript': '/assets/icons/typescript-original.svg',
-    'css': '/assets/icons/css3-original-wordmark.svg',
-    'vue': '/assets/icons/vuejs-original.svg',
-    'vue.js': '/assets/icons/vuejs-original.svg',
-    'node': '/assets/icons/nodejs-original.svg',
-    'node.js': '/assets/icons/nodejs-original.svg',
-    'c#': '/assets/icons/csharp-original.svg',
-    'visual c#': '/assets/icons/csharp-original.svg',
-    'c++': '/assets/icons/cplusplus-original.svg',
-    'c': '/assets/icons/c-original.svg',
-    'android': '/assets/icons/android-original.svg',
-    'spring boot': '/assets/icons/spring-original.svg',
-    'spring security': '/assets/icons/spring-original.svg',
-    'mysql': '/assets/icons/mysql-original.svg',
-    'firebase': '/assets/icons/firebase-original.svg',
-    'qt': '/assets/icons/qt-original.svg',
-    '.net framework': '/assets/icons/dot-net-original.svg',
-    'winforms': '/assets/icons/dot-net-original.svg',
-    'scss': '/assets/icons/sass-original.svg',
-    'arduino': '/assets/icons/arduino-original.svg'
+    'angular': '/assets/icons/angular.svg',
+    'react': '/assets/icons/react.svg',
+    'react native': '/assets/icons/react.svg',
+    'python': '/assets/icons/python.svg',
+    'flask': '/assets/icons/flask.svg',
+    'html': '/assets/icons/html5-wordmark.svg',
+    'html and css': '/assets/icons/html5-wordmark.svg',
+    'php': '/assets/icons/php.svg',
+    'java': '/assets/icons/java.svg',
+    'javascript': '/assets/icons/javascript.svg',
+    'typescript': '/assets/icons/typescript.svg',
+    'css': '/assets/icons/css3-wordmark.svg',
+    'vue': '/assets/icons/vuejs.svg',
+    'vue.js': '/assets/icons/vuejs.svg',
+    'node': '/assets/icons/nodejs.svg',
+    'node.js': '/assets/icons/nodejs.svg',
+    'c#': '/assets/icons/csharp.svg',
+    'visual c#': '/assets/icons/csharp.svg',
+    'c++': '/assets/icons/cplusplus.svg',
+    'c': '/assets/icons/c.svg',
+    'android': '/assets/icons/android.svg',
+    'spring boot': '/assets/icons/spring.svg',
+    'spring security': '/assets/icons/spring.svg',
+    'mysql': '/assets/icons/mysql.svg',
+    'firebase': '/assets/icons/firebase.svg',
+    'qt': '/assets/icons/qt.svg',
+    '.net framework': '/assets/icons/dot-net.svg',
+    'winforms': '/assets/icons/dot-net.svg',
+    'scss': '/assets/icons/sass.svg',
+    'arduino': '/assets/icons/arduino.svg'
   };
 
   ngOnInit() {
@@ -107,6 +107,6 @@ export class ProjectCardComponent implements OnInit {
   getLanguageIconUrl(technology: string): string {
     const techLower = technology.toLowerCase();
     // Return a default git icon if the technology is not found in our map
-    return this.languageIconUrls[techLower] || '/assets/icons/git-original.svg';
+    return this.languageIconUrls[techLower] || '/assets/icons/git.svg';
   }
 }
