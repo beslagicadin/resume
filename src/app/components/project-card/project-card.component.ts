@@ -43,7 +43,7 @@ export class ProjectCardComponent implements OnInit {
     'visual c#': '/assets/icons/csharp-original.svg',
     'c++': '/assets/icons/cplusplus-original.svg',
     'c': '/assets/icons/c-original.svg',
-    'android': '/assets/icons/android-vertical.svg',
+    'android': '/assets/icons/android-original.svg',
     'spring boot': '/assets/icons/spring-original.svg',
     'spring security': '/assets/icons/spring-original.svg',
     'mysql': '/assets/icons/mysql-original.svg',
