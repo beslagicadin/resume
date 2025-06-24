@@ -23,6 +23,7 @@
         "files": [
           "/assets/**",
           "!/assets/sitemap.xml",
+          "!/sitemap-static.xml",
           "/icons/**",
           "/screenshots/**",
           "/*.(png|jpg|gif|svg|ico)"
