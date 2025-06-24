@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="512" height="512" viewBox="0 0 512 512" version="1.1" xmlns="http://www.w3.org/2000/svg">
+    <!-- Circular background with brand color -->
+    <circle cx="256" cy="256" r="236" fill="#0078ff"/>
+    
+    <!-- Safe zone for maskable icons (within 80% of the radius) -->
+    <g>
+        <!-- Gear/cog icon in white, centered -->
+        <path
+            d="M256 160
+               v-30
+               M256 382
+               v-30
+               M160 256
+               h-30
+               M382 256
+               h-30
+               M190 190
+               l-21 -21
+               M343 343
+               l-21 -21
+               M190 322
+               l-21 21
+               M343 169
+               l-21 21"
+            stroke="white"
+            stroke-width="18"
+            stroke-linecap="round"/>
+        
+        <circle cx="256" cy="256" r="70" 
+            fill="none"
+            stroke="white" 
+            stroke-width="18"/>
+            
+        <circle cx="256" cy="256" r="110" 
+            fill="none"
+            stroke="white" 
+            stroke-width="28"
+            stroke-dasharray="22,48"/>
+    </g>
+</svg>

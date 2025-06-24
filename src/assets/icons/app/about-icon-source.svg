@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="512" height="512" viewBox="0 0 512 512" version="1.1" xmlns="http://www.w3.org/2000/svg">
+    <!-- Circular background with brand color -->
+    <circle cx="256" cy="256" r="236" fill="#0078ff"/>
+    
+    <!-- Safe zone for maskable icons (within 80% of the radius) -->
+    <g>
+        <!-- Person icon in white, centered -->
+        <path
+            d="M256 120
+               a60 60 0 0 1 0 120
+               a60 60 0 0 1 0 -120z
+               M182 290
+               a74 74 0 0 1 148 0
+               v12
+               q0 10 -8 14
+               l-66 40
+               q-8 4 -16 0
+               l-66 -40
+               q-8 -4 -8 -14
+               v-12z"
+            fill="white"
+            stroke="white"
+            stroke-width="8"
+            stroke-linejoin="round"
+            stroke-linecap="round"/>
+    </g>
+</svg>
