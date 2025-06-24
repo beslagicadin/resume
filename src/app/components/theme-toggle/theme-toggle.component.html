@@ -1,6 +1,13 @@
 <div class="theme-toggle">
-  <button class="theme-switch" (click)="toggleTheme()">
-    <fa-icon [icon]="faSun" class="sun-icon"></fa-icon>
-    <fa-icon [icon]="faMoon" class="moon-icon"></fa-icon>
+  <button 
+    class="theme-switch" 
+    (click)="toggleTheme()"
+    [attr.aria-label]="isDarkTheme ? 'Switch to light theme' : 'Switch to dark theme'"
+    [attr.aria-pressed]="isDarkTheme"
+    type="button"
+    title="Toggle theme">
+    <fa-icon [icon]="faSun" class="sun-icon" [attr.aria-hidden]="true"></fa-icon>
+    <fa-icon [icon]="faMoon" class="moon-icon" [attr.aria-hidden]="true"></fa-icon>
+    <span class="visually-hidden">{{ isDarkTheme ? 'Switch to light theme' : 'Switch to dark theme' }}</span>
   </button>
 </div>

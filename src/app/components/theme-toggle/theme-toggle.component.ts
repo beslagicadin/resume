@@ -17,6 +17,10 @@ export class ThemeToggleComponent {
   
   constructor(public themeService: ThemeService) {}
   
+  get isDarkTheme(): boolean {
+    return this.themeService.isDarkTheme();
+  }
+  
   toggleTheme(): void {
     this.themeService.toggleTheme();
   }
