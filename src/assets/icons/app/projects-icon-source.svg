@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="512" height="512" viewBox="0 0 512 512" version="1.1" xmlns="http://www.w3.org/2000/svg">
+    <!-- Circular background with brand color -->
+    <circle cx="256" cy="256" r="236" fill="#0078ff"/>
+    
+    <!-- Safe zone for maskable icons (within 80% of the radius) -->
+    <g>
+        <!-- Code/folder icon in white, centered -->
+        <path
+            d="M160 160
+               h60
+               l20 -30
+               h90
+               a20 20 0 0 1 20 20
+               v190
+               a20 20 0 0 1 -20 20
+               h-170
+               a20 20 0 0 1 -20 -20
+               v-160
+               a20 20 0 0 1 20 -20z
+               M190 250
+               l-30 30
+               l30 30
+               M320 250
+               l30 30
+               l-30 30
+               M235 220
+               l40 120"
+            fill="none"
+            stroke="white"
+            stroke-width="18"
+            stroke-linejoin="round"
+            stroke-linecap="round"/>
+    </g>
+</svg>

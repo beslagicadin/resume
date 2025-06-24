@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="512" height="512" viewBox="0 0 512 512" version="1.1" xmlns="http://www.w3.org/2000/svg">
+    <!-- Circular background with brand color -->
+    <circle cx="256" cy="256" r="236" fill="#0078ff"/>
+    
+    <!-- Safe zone for maskable icons (within 80% of the radius) -->
+    <g>
+        <!-- Envelope/email icon in white, centered -->
+        <path
+            d="M150 180
+               a20 20 0 0 0 -20 20
+               v120
+               a20 20 0 0 0 20 20
+               h212
+               a20 20 0 0 0 20 -20
+               v-120
+               a20 20 0 0 0 -20 -20
+               h-212z
+               M130 190
+               l126 90
+               a6 6 0 0 0 6 0
+               l120 -90
+               M130 320
+               l80 -60
+               M382 320
+               l-80 -60"
+            fill="none"
+            stroke="white"
+            stroke-width="18"
+            stroke-linejoin="round"
+            stroke-linecap="round"/>
+    </g>
+</svg>
