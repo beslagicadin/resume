@@ -22,6 +22,7 @@
       "resources": {
         "files": [
           "/assets/**",
+          "!/assets/sitemap.xml",
           "/icons/**",
           "/screenshots/**",
           "/*.(png|jpg|gif|svg|ico)"
