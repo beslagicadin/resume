@@ -75,7 +75,8 @@
 .avatar {
   width: 120px;
   height: 120px;
-  background-image: url('/assets/images/profile/profile.jpeg');
+  /* Modern browsers will use WebP, fallback to JPEG */
+  background-image: url('/assets/images/profile/profile-optimized.webp'), url('/assets/images/profile/profile-optimized.jpeg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

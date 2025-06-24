@@ -1,7 +1,9 @@
 import { Injectable } from '@angular/core';
+import { ImageOptimizationService } from './image-optimization.service';
 
 /**
  * Service for managing asset paths and providing centralized asset configuration
+ * with image optimization support
  */
 @Injectable({
   providedIn: 'root'
@@ -60,7 +62,7 @@ export class AssetService {
 
   private basePath: string = '';
 
-  constructor() {
+  constructor(private imageOptimization: ImageOptimizationService) {
     this.initializeBasePath();
   }
 
@@ -84,10 +86,29 @@ export class AssetService {
   }
 
   /**
-   * Get the profile image path
+   * Get the profile image path with optimization
    */
-  getProfileImage(filename: string = 'profile.jpeg'): string {
+  getProfileImage(filename: string = 'profile-optimized.jpeg', useOptimized: boolean = true): string {
+    if (useOptimized) {
+      const basePath = this.getAssetPath('profile', '');
+      // Check for WebP support and return WebP if available
+      const webpFilename = filename.replace(/\.(jpeg|jpg)$/i, '.webp');
+      return this.imageOptimization.getOptimizedImageSrc(basePath, webpFilename);
+    }
     return this.getAssetPath('profile', filename);
+  }
+
+  /**
+   * Get optimized profile image with multiple format support
+   */
+  getOptimizedProfileImage(): HTMLPictureElement {
+    const basePath = this.getAssetPath('profile', '');
+    return this.imageOptimization.createPictureElement(
+      basePath,
+      'profile-optimized.jpeg',
+      'Adin Bešlagić Profile Photo',
+      'avatar'
+    );
   }
 
   /**
@@ -125,22 +146,23 @@ export class AssetService {
   }
 
   /**
-   * Preload critical assets
+   * Preload critical assets with optimization
    */
   preloadCriticalAssets(): void {
-    const criticalAssets = [
-      this.getProfileImage(),
+    // Preload optimized profile image
+    const profileImageSrc = this.getProfileImage();
+    this.imageOptimization.preloadImage(profileImageSrc, 'image/jpeg');
+
+    // Preload critical technology icons
+    const criticalTechIcons = [
       this.getTechnologyIcon('angular'),
       this.getTechnologyIcon('typescript'),
-      this.getTechnologyIcon('javascript')
+      this.getTechnologyIcon('javascript'),
+      this.getTechnologyIcon('react')
     ];
 
-    criticalAssets.forEach(assetPath => {
-      const link = document.createElement('link');
-      link.rel = 'preload';
-      link.as = 'image';
-      link.href = assetPath;
-      document.head.appendChild(link);
+    criticalTechIcons.forEach(iconPath => {
+      this.imageOptimization.preloadImage(iconPath, 'image/svg+xml');
     });
   }
 
@@ -156,5 +178,20 @@ export class AssetService {
    */
   hasTechnologyIcon(technology: string): boolean {
     return technology.toLowerCase() in this.technologyIcons;
+  }
+
+  /**
+   * Get responsive profile image sizes
+   */
+  getResponsiveProfileImages(): { small: string; medium: string; large: string } {
+    const basePath = this.getAssetPath('profile', '');
+    return this.imageOptimization.getResponsiveImageSizes(basePath, 'profile-optimized.jpeg');
+  }
+
+  /**
+   * Get image optimization service for advanced use cases
+   */
+  getImageOptimizationService(): ImageOptimizationService {
+    return this.imageOptimization;
   }
 }

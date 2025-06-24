@@ -1,47 +1,53 @@
-# Development and build artifacts
-node_modules
-.git
-.github
-dist
-.angular
-.idea
-.vscode
-.DS_Store
-coverage
-coverage-reports
-.nyc_output
-e2e
-cypress
-
-# Large files and reports
-*.report.html
+# Angular cache and build artifacts
+.angular/
+node_modules/
+src/
 *.log
-logs
+
+# Development files
+.git/
+.github/
+.idea/
+.vscode/
+.DS_Store
+
+# Test and coverage files
+coverage/
+coverage-reports/
+.nyc_output/
+*.spec.ts
+karma.conf.js
+*.test.ts
+e2e/
+cypress/
+
+# Documentation and config files not needed for deployment
+README.md
+.editorconfig
+tsconfig.*.json
+angular.json
+
+# Large report files
+*.report.html
 junit.xml
 stats.json
 size-plugin.json
 
 # Cache and temporary files
 .npm
-.pnpm-store
-tmp
-out-tsc
-bazel-out
+.pnpm-store/
+tmp/
+out-tsc/
+bazel-out/
 .rollup.cache
-.next
-.webpack
+.next/
+.webpack/
 .eslintcache
 .stylelintcache
-.sass-cache
+.sass-cache/
 connect.lock
 
-# Testing
-/tests
-/test
-/coverage
-/cypress
-
-# Environment files except for the base environment
+# Environment files
 .env*
 !.env.example
 
@@ -56,7 +62,7 @@ libpeerconnection.log
 testem.log
 
 # Firebase specific
-.firebase
+.firebase/
 .runtimeconfig.json
 firebase-debug.log
 firebase-debug.*.log
