@@ -1,10 +1,9 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { CommonModule, NgStyle } from '@angular/common';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { Project } from '../../models/project.model';
+import { Project } from '@app/models/project.model';
 import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
-import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
 
 @Component({
   selector: 'app-project-card',
@@ -29,13 +28,13 @@ export class ProjectCardComponent implements OnInit {
     'react native': '/assets/icons/react.svg',
     'python': '/assets/icons/python.svg',
     'flask': '/assets/icons/flask.svg',
-    'html': '/assets/icons/html5-wordmark.svg',
-    'html and css': '/assets/icons/html5-wordmark.svg',
+    'html': '/assets/icons/html5.svg',
+    'html and css': '/assets/icons/html5.svg',
     'php': '/assets/icons/php.svg',
     'java': '/assets/icons/java.svg',
     'javascript': '/assets/icons/javascript.svg',
     'typescript': '/assets/icons/typescript.svg',
-    'css': '/assets/icons/css3-wordmark.svg',
+    'css': '/assets/icons/css3.svg',
     'vue': '/assets/icons/vuejs.svg',
     'vue.js': '/assets/icons/vuejs.svg',
     'node': '/assets/icons/nodejs.svg',
@@ -64,7 +63,6 @@ export class ProjectCardComponent implements OnInit {
     // Get the base path from the base href tag
     const baseTag = document.querySelector('base');
     if (baseTag && baseTag.getAttribute('href')) {
-      // Remove trailing slash if present
       this.basePath = baseTag.getAttribute('href')!.replace(/\/$/, '');
     }
   }
@@ -116,12 +114,12 @@ export class ProjectCardComponent implements OnInit {
     const techLower = technology.toLowerCase();
     // Return a default git icon if the technology is not found in our map
     const iconPath = this.languageIconUrls[techLower] || '/assets/icons/git.svg';
-    
+
     // If the path starts with '/' and we have a base path, prepend the base path
     if (iconPath.startsWith('/') && this.basePath) {
       return `${this.basePath}${iconPath}`;
     }
-    
+
     return iconPath;
   }
 }

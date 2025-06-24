@@ -1,0 +1,62 @@
+# Development and build artifacts
+node_modules
+.git
+.github
+dist
+.angular
+.idea
+.vscode
+.DS_Store
+coverage
+coverage-reports
+.nyc_output
+e2e
+cypress
+
+# Large files and reports
+*.report.html
+*.log
+logs
+junit.xml
+stats.json
+size-plugin.json
+
+# Cache and temporary files
+.npm
+.pnpm-store
+tmp
+out-tsc
+bazel-out
+.rollup.cache
+.next
+.webpack
+.eslintcache
+.stylelintcache
+.sass-cache
+connect.lock
+
+# Testing
+/tests
+/test
+/coverage
+/cypress
+
+# Environment files except for the base environment
+.env*
+!.env.example
+
+# Debug files
+*-debug.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+libpeerconnection.log
+testem.log
+
+# Firebase specific
+.firebase
+.runtimeconfig.json
+firebase-debug.log
+firebase-debug.*.log

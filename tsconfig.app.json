@@ -8,10 +8,27 @@
       "node"
     ]
   },
+  "files": [
+    "src/main.ts",
+    "src/app/app.config.ts",
+    "src/app/app.routes.ts",
+    "src/app/components/project-card/project-card.component.ts",
+    "src/app/data/projects.data.ts",
+    "src/environments/environment.ts"
+  ],
   "include": [
-    "src/**/*.ts"
+    "src/app/**/*.ts",
+    "src/models/project.model.ts"
   ],
   "exclude": [
-    "src/**/*.spec.ts"
+    "src/**/*.spec.ts",
+    "src/**/*.server.ts",
+    "src/server.ts",
+    "src/main.server.ts",
+    "src/app/app.config.server.ts",
+    "src/app/app.routes.server.ts",
+    "src/app/app.server.module.ts",
+    "src/app/app.manifest.ts",
+    "src/environments/*.prod.ts"
   ]
 }
