@@ -15,4 +15,4 @@ Crawl-delay: 10
 Disallow: /assets/raw/
 
 # Point to sitemap
-Sitemap: https://beslagicadin.vercel.app/sitemap.xml
+Sitemap: https://beslagicadin.vercel.app/assets/sitemap.xml
