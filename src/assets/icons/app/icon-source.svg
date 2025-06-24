@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="512" height="512" viewBox="0 0 512 512" version="1.1" xmlns="http://www.w3.org/2000/svg">
+    <!-- Circular background with brand color -->
+    <circle cx="256" cy="256" r="236" fill="#0078ff"/>
+    
+    <!-- Safe zone for maskable icons (within 80% of the radius) -->
+    <g>
+        <!-- AB initials in white, centered -->
+        <text 
+            x="256" 
+            y="296" 
+            font-family="Arial, Helvetica, sans-serif" 
+            font-weight="bold" 
+            font-size="180" 
+            text-anchor="middle" 
+            fill="white"
+            letter-spacing="-10">
+            AB
+        </text>
+    </g>
+</svg>
