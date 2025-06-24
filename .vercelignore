@@ -1,17 +1,14 @@
-# Angular cache and build artifacts
+# Angular cache (the main culprit for large deployments)
 .angular/
-node_modules/
-src/
-*.log
 
-# Development files
+# Development files not needed for build
 .git/
 .github/
 .idea/
 .vscode/
 .DS_Store
 
-# Test and coverage files
+# Test files (not needed for production build)
 coverage/
 coverage-reports/
 .nyc_output/
@@ -21,11 +18,9 @@ karma.conf.js
 e2e/
 cypress/
 
-# Documentation and config files not needed for deployment
+# Documentation files
 README.md
 .editorconfig
-tsconfig.*.json
-angular.json
 
 # Large report files
 *.report.html
