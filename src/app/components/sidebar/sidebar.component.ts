@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import {faMapMarkerAlt, faBuilding, faEnvelope, faPhone} from '@fortawesome/free-solid-svg-icons';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import { LazyLoadDirective } from '../../directives/lazy-load.directive';
 
 interface SkillCategory {
   name: string;
@@ -13,7 +14,7 @@ interface SkillCategory {
 @Component({
   selector: 'app-sidebar',
   standalone: true,
-  imports: [CommonModule, FontAwesomeModule],
+  imports: [CommonModule, FontAwesomeModule, LazyLoadDirective],
   templateUrl: './sidebar.component.html',
   styleUrls: ['./sidebar.component.scss']
 })
