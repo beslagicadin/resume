@@ -1,5 +1,5 @@
 /* Global Styles */
-@import './app/styles/lazy-loading.scss';
+@use './app/styles/lazy-loading.scss';
 :root {
   /* Color Variables */
   --primary-color: #2563eb;
