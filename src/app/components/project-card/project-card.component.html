@@ -5,9 +5,10 @@
   <div class="technologies">
     @for (tech of project.technologies; track tech) {
       <span [class]="'technology-badge ' + getLanguageClass(tech)">
-        <img [src]="getLanguageIconUrl(tech)"
+        <img [appLazyLoad]="getLanguageIconUrl(tech)"
              [alt]="tech + ' icon'"
-             class="technology-icon">
+             class="technology-icon"
+             placeholder="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMTIiIGN5PSIxMiIgcj0iMTAiIGZpbGw9IiNGNUY1RjUiLz4KPC9zdmc+">
         <span class="technology-text">{{ tech }}</span>
       </span>
     }

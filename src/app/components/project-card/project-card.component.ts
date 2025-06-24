@@ -1,16 +1,17 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { CommonModule, NgStyle } from '@angular/common';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { Project } from '@app/models/project.model';
+import { Project } from '../../models/project.model';
 import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
 import { AssetService } from '../../services/asset.service';
+import { LazyLoadDirective } from '../../directives/lazy-load.directive';
 
 @Component({
   selector: 'app-project-card',
   standalone: true,
-  imports: [CommonModule, FontAwesomeModule, NgStyle],
+  imports: [CommonModule, FontAwesomeModule, NgStyle, LazyLoadDirective],
   templateUrl: './project-card.component.html',
   styleUrls: ['./project-card.component.scss']
 })

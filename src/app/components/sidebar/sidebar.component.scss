@@ -75,13 +75,11 @@
 .avatar {
   width: 120px;
   height: 120px;
-  /* Modern browsers will use WebP, fallback to JPEG */
-  background-image: url('/assets/images/profile/profile-optimized.webp'), url('/assets/images/profile/profile-optimized.jpeg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
   border-radius: 50%;
   margin: 0 auto;
+  display: block;
+  object-fit: cover;
+  object-position: center;
   transition: var(--transition-transform), box-shadow 0.3s ease;
   transform: var(--accelerate);
   box-shadow: 0 4px 10px var(--shadow-base);
