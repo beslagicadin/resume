@@ -121,5 +121,28 @@
 <body>
   <app-root></app-root>
   <noscript>Please enable JavaScript to continue using this application.</noscript>
+  
+  <!-- GitHub Profile Contact Redirect Script -->
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      const hash = window.location.hash;
+      
+      // Handle contact redirects from GitHub profile
+      switch (hash) {
+        case '#email':
+          window.location.href = 'mailto:beslagicadin@gmail.com';
+          break;
+        case '#si':
+          window.location.href = 'tel:+38669437424';
+          break;
+        case '#bih':
+          window.location.href = 'tel:+38765094079';
+          break;
+        default:
+          // If no contact redirect needed, continue normal operation
+          break;
+      }
+    });
+  </script>
 </body>
 </html>

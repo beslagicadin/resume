@@ -58,6 +58,11 @@ export class SidebarComponent {
       isExpanded: false
     },
     {
+      name: 'Databases',
+      skills: ['MySQL', 'PostgreSQL', 'SQLite', 'MongoDB', 'Firebase Storage', 'Oracle Database'],
+      isExpanded: false
+    },
+    {
       name: 'Tools',
       skills: ['Git', 'Jira', 'Postman', 'Docker', 'Bitbucket', 'Jenkins', 'Confluence', 'DVC', 'DagsHub', 'GitHub Actions', 'Jfrog Artifactory', 'Microsoft Office', 'Slack'],
       isExpanded: false
