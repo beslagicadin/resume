@@ -3,7 +3,8 @@ import { CommonModule } from '@angular/common';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import {faMapMarkerAlt, faBuilding, faEnvelope, faPhone} from '@fortawesome/free-solid-svg-icons';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
-import { LazyLoadDirective } from '../../directives/lazy-load.directive';
+import { LazyLoadDirective } from '@app/directives/lazy-load.directive';
+import { AssetService } from '@app/services/asset.service';
 
 interface SkillCategory {
   name: string;
@@ -25,11 +26,20 @@ export class SidebarComponent {
   faPhone = faPhone;
   faGithub = faGithub;
   faLinkedin = faLinkedin;
-  
+
+  // Profile image paths
+  profileImageSrc: string;
+  profileImagePlaceholder: string;
+
+  constructor(private assetService: AssetService) {
+    this.profileImageSrc = this.assetService.getProfileImage('profile-optimized.jpeg', false);
+    this.profileImagePlaceholder = this.assetService.getProfileImage('profile-optimized.jpeg', false);
+  }
+
   skillCategories: SkillCategory[] = [
     {
       name: 'Programming Languages',
-      skills: ['C', 'C++', 'C#', 'HTML', 'Java', 'JavaScript', 'TypeScript', 'Kotlin', 'Python', 'SQL'],
+      skills: ['Java', 'Python', 'Kotlin', 'C', 'C++', 'C#', 'HTML', 'JavaScript', 'TypeScript', 'SQL'],
       isExpanded: false
     },
     {
@@ -39,27 +49,27 @@ export class SidebarComponent {
     },
     {
       name: 'Frameworks & Libraries',
-      skills: ['Angular', 'Django', 'Flask', 'Jetpack Compose', 'JUnit', 'Maven', 'Qt', 'React', 'React Native', 'Spring', 'Spring Boot'],
+      skills: ['Angular', 'Jetpack Compose', 'Spring', 'Spring Boot', 'Django', 'Flask', 'Maven', 'Qt', 'React', 'React Native'],
       isExpanded: false
     },
     {
       name: 'IDEs',
-      skills: ['Android Studio', 'Arduino IDE', 'JetBrains IDEs', 'Visual Studio', 'Visual Studio Code'],
+      skills: ['JetBrains IDE Tools', 'Android Studio', 'Arduino IDE', 'Visual Studio', 'Visual Studio Code', 'RIDE'],
       isExpanded: false
     },
     {
       name: 'Tools',
-      skills: ['Bitbucket', 'Confluence', 'Docker', 'Git', 'DVC', 'DagsHub','GitHub Actions', 'Jenkins', 'Jira', 'Jfrog Artifactory', 'Microsoft Office', 'Postman', 'Slack'],
+      skills: ['Git', 'Jira', 'Postman', 'Docker', 'Bitbucket', 'Jenkins', 'Confluence', 'DVC', 'DagsHub', 'GitHub Actions', 'Jfrog Artifactory', 'Microsoft Office', 'Slack'],
       isExpanded: false
     },
     {
       name: 'Platforms',
-      skills: ['Firebase', 'GitHub Pages', 'Google Cloud Platform (GCP)', 'Google Play Console', 'Heroku', 'Netlify', 'Render'],
+      skills: ['Firebase', 'Netlify', 'Google Play Console', 'Vercel', 'Render', 'GitHub Pages', 'Google Cloud Platform (GCP)', 'Google Search Platform (GCP)', 'Heroku'],
       isExpanded: false
     },
     {
       name: 'Testing',
-      skills: ['Appium', 'AssertJ', 'Mockito', 'Robot Framework', 'Selenium'],
+      skills: ['Appium', 'Robot Framework', 'Mockito', 'AssertJ', 'Selenium', 'JUnit'],
       isExpanded: false
     }
   ];

@@ -20,7 +20,7 @@ export const projects: Project[] = [
       previewUrl: 'https://sasvim-licne-finansije.onrender.com'
     },
     {
-      name: 'ToDoListApp',
+      name: 'To-Do List App',
       description: 'ToDo List App with Jira Integration - Assignment Project',
       technologies: ['React Native', 'Firebase'],
       repoUrl: 'https://github.com/beslagicadin/ToDoListApp'
@@ -32,104 +32,104 @@ export const projects: Project[] = [
       repoUrl: 'https://github.com/beslagicadin/test-iis'
     },
     {
-      name: 'E70AB',
+      name: 'E70AB HAM radio web site',
       description: 'HTML+CSS static web site',
       technologies: ['HTML', 'CSS'],
       previewUrl: 'https://beslagicadin.github.io/e70ab/'
     },
     {
-      name: 'think-big',
-      description: 'A project utilizing SCSS for styling',
+      name: 'Think Big Academy landing page',
+      description: 'Angular landing page for Think Big Academy, an educational STEM courses platform for youth.',
       technologies: ['Angular'],
       previewUrl: 'https://thinkbigacademy.net'
     },
     {
-      name: 'dmr-tz',
+      name: 'DMR-TZ Web app for DMR radio users',
       description: 'Python project with Flask for a web application',
       technologies: ['Python', 'Flask'],
       previewUrl: 'https://dmr-tz.onrender.com/'
     },
     {
-      name: "BusArrivalDisplay",
+      name: "Bus Arrival Display",
       description: "Tool for extracting and displaying bus arrival times",
-      technologies: ['Java', 'Spring Boot'],
+      technologies: ['Java'],
       repoUrl: "https://github.com/beslagicadin/RidangoBusArrivalDisplay"
     },
     {
-      name: "diplomski_rad",
-      description: "Graduation project focused on Security aspects of API development using Spring Boot and Spring security libraries",
+      name: "Diplomski rad",
+      description: "Graduation project focused on Security aspects of API development using Spring Boot and Spring security library",
       technologies: ['Java', 'Spring Boot'],
       repoUrl: "https://github.com/beslagicadin/diplomski_rad"
     },
     {
-      name: "volleyballScoreboard",
-      description: "My high school graduation work - Volleyball Scoreboard desktop control application",
+      name: "Volleyball Scoreboard",
+      description: "My high school graduation work - Volleyball Scoreboard desktop control application and Arduino software for controlling the scoreboard hardware",
       technologies: ['Visual C#', 'Arduino'],
       repoUrl: "https://github.com/beslagicadin/volleyballScoreboard"
     },
     {
-      name: "htdocsDirExplorer",
+      name: "htdocs Dir Explorer",
       description: "htdocs directory explorer - PHP project for exploring directories and files for local web servers like XAMPP or WAMP",
       technologies: ['PHP', 'HTML', 'CSS'],
       repoUrl: "https://github.com/beslagicadin/htdocsDirExplorer"
     },
     {
-      name: "lift",
-      description: "C program for controlling a lift system",
-      technologies: ['C'],
-      repoUrl: "https://github.com/beslagicadin/lift"
-    },
-    {
-      name: "PetShop",
-      description: "Android app for Pet Shop with names and descriptions of animals. ",
+      name: "Pet Shop",
+      description: "Android test app for Pet Shop with names and descriptions of animals. ",
       technologies: ['Android', 'Java'],
       repoUrl: "https://github.com/beslagicadin/PetShop"
     },
     {
-      name: "HR_management",
-      description: "Java Application for Human Resources management",
+      name: "HR Management",
+      description: "Java test application for Human Resources management",
       technologies: ['Java', 'Spring Boot', 'MySQL'],
       repoUrl: "https://github.com/beslagicadin/HR_management"
     },
     {
-      name: "TipCalculator",
+      name: "Tip Calculator",
       description: "Tip calculator android app",
       technologies: ['Android', 'Java'],
       repoUrl: "https://github.com/beslagicadin/TipCalculator"
     },
     {
       name: "Chatter",
-      description: "Android chat app",
+      description: "Android chat test app",
       technologies: ['Android', 'Java', 'Firebase'],
       repoUrl: "https://github.com/beslagicadin/Chatter"
     },
     {
-      name: "Car-app",
-      description: "Spring Boot and Angular project with REST API for managing MySQL DB of cars based on their ACRISS code",
+      name: "Car app",
+      description: "Spring Boot and Angular projects with REST API for managing MySQL DB of cars based on their ACRISS code",
       technologies: ['Java', 'Spring Boot', 'Angular', 'MySQL'],
       repoUrl: "https://github.com/beslagicadin/Car-app"
     },
     {
-      name: "Pong",
+      name: "Pong Game",
       description: "Visual C# desktop game of Pong",
       technologies: ['Visual C#'],
       repoUrl: "https://github.com/beslagicadin/Pong"
     },
     {
-      name: "TicTacToe",
+      name: "Tic Tac Toe",
       description: "Tic Tac Toe game for Android",
       technologies: ['Android', 'Java'],
       repoUrl: "https://github.com/beslagicadin/TicTacToe"
     },
     {
-      name: "TryMe",
-      description: "Android Java app that changes to a random background color on every tap of a button",
+      name: "Try Me",
+      description: "Android test app that changes to a random background color on every tap of a button",
       technologies: ['Android', 'Java'],
       repoUrl: "https://github.com/beslagicadin/TryMe"
     },
     {
-      name: "QT_Avioni",
-      description: "QT desktop game like Asteroids",
+      name: "Lift Control System",
+      description: "C program for controlling a mocked elevator system",
+      technologies: ['C'],
+      repoUrl: "https://github.com/beslagicadin/lift"
+    },
+    {
+      name: "QT Asteroids",
+      description: "QT desktop game similar to Asteroids",
       technologies: ['C++', 'Qt'],
       repoUrl: "https://github.com/beslagicadin/QT_Avioni"
     },
