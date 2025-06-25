@@ -129,19 +129,93 @@
       const hash = window.location.hash;
       console.log(`Immediate hash check: ${hash}`);
       
+      function showContactInfo(type, contact) {
+        // Create modal-like overlay
+        const overlay = document.createElement('div');
+        overlay.style.cssText = `
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: rgba(0,0,0,0.8);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          z-index: 10000;
+          font-family: 'Poppins', sans-serif;
+        `;
+        
+        const modal = document.createElement('div');
+        modal.style.cssText = `
+          background: white;
+          padding: 30px;
+          border-radius: 10px;
+          text-align: center;
+          max-width: 400px;
+          box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        `;
+        
+        modal.innerHTML = `
+          <h3 style="margin: 0 0 20px 0; color: #333;">Contact Information</h3>
+          <p style="margin: 0 0 20px 0; color: #666;">Click to copy ${type}:</p>
+          <div style="
+            background: #f5f5f5;
+            padding: 15px;
+            border-radius: 5px;
+            font-size: 18px;
+            font-weight: 500;
+            color: #0078ff;
+            cursor: pointer;
+            user-select: text;
+          " onclick="navigator.clipboard.writeText('${contact}').then(() => { 
+            this.innerHTML = '✅ Copied!';
+            setTimeout(() => this.innerHTML = '${contact}', 2000);
+          })">${contact}</div>
+          <button onclick="this.parentElement.parentElement.remove()" style="
+            margin-top: 20px;
+            padding: 10px 20px;
+            background: #0078ff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+          ">Close</button>
+        `;
+        
+        overlay.appendChild(modal);
+        document.body.appendChild(overlay);
+        
+        // Auto-close after 10 seconds
+        setTimeout(() => {
+          if (overlay.parentElement) overlay.remove();
+        }, 10000);
+      }
+      
       if (hash === '#email') {
         console.log('Immediate email redirect...');
         window.location.href = 'mailto:beslagicadin@gmail.com';
+        // Show fallback after a short delay
+        setTimeout(() => {
+          showContactInfo('email address', 'beslagicadin@gmail.com');
+        }, 1000);
         return;
       }
       if (hash === '#si') {
         console.log('Immediate Slovenia redirect...');
         window.location.href = 'tel:+38669437424';
+        setTimeout(() => {
+          showContactInfo('Slovenia phone number', '+386 69 437 424');
+        }, 1000);
         return;
       }
       if (hash === '#bih') {
         console.log('Immediate Bosnia redirect...');
         window.location.href = 'tel:+38765094079';
+        setTimeout(() => {
+          showContactInfo('Bosnia phone number', '+387 65 094 079');
+        }, 1000);
         return;
       }
     })();
