@@ -124,22 +124,49 @@
   
   <!-- GitHub Profile Contact Redirect Script -->
   <script>
+    // Immediate check before Angular loads
+    (function() {
+      const hash = window.location.hash;
+      console.log(`Immediate hash check: ${hash}`);
+      
+      if (hash === '#email') {
+        console.log('Immediate email redirect...');
+        window.location.href = 'mailto:beslagicadin@gmail.com';
+        return;
+      }
+      if (hash === '#si') {
+        console.log('Immediate Slovenia redirect...');
+        window.location.href = 'tel:+38669437424';
+        return;
+      }
+      if (hash === '#bih') {
+        console.log('Immediate Bosnia redirect...');
+        window.location.href = 'tel:+38765094079';
+        return;
+      }
+    })();
+    
+    // Fallback check after DOM loads
     window.addEventListener('DOMContentLoaded', () => {
       const hash = window.location.hash;
+      console.log(`DOM loaded hash check: ${hash}`);
       
       // Handle contact redirects from GitHub profile
       switch (hash) {
         case '#email':
-          window.location.href = 'mailto:beslagicadin@gmail.com';
+          console.log('DOM loaded: Redirecting to email...');
+          setTimeout(() => { window.location.href = 'mailto:beslagicadin@gmail.com'; }, 100);
           break;
         case '#si':
-          window.location.href = 'tel:+38669437424';
+          console.log('DOM loaded: Redirecting to Slovenia number...');
+          setTimeout(() => { window.location.href = 'tel:+38669437424'; }, 100);
           break;
         case '#bih':
-          window.location.href = 'tel:+38765094079';
+          console.log('DOM loaded: Redirecting to Bosnia number...');
+          setTimeout(() => { window.location.href = 'tel:+38765094079'; }, 100);
           break;
         default:
-          // If no contact redirect needed, continue normal operation
+          console.log('No redirect needed.');
           break;
       }
     });
