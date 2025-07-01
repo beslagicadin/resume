@@ -9,7 +9,11 @@
     "build:ssr": "ng run CV:prerender",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "generate-screenshots": "node public/screenshots/screenshot.js"
+    "generate-screenshots": "node public/screenshots/screenshot.js",
+    "export-pdf": "node scripts/export-pdf.js",
+    "export-pdf:local": "node scripts/export-pdf.js local",
+    "export-pdf:production": "node scripts/export-pdf.js production",
+    "export-pdf:single": "node scripts/export-pdf.js single"
   },
   "private": true,
   "dependencies": {
