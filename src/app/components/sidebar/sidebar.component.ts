@@ -5,6 +5,7 @@ import {faMapMarkerAlt, faBuilding, faEnvelope, faPhone} from '@fortawesome/free
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { LazyLoadDirective } from '@app/directives/lazy-load.directive';
 import { AssetService } from '@app/services/asset.service';
+import { FlagService } from '@app/services/flag.service';
 
 interface SkillCategory {
   name: string;
@@ -31,7 +32,7 @@ export class SidebarComponent {
   profileImageSrc: string;
   profileImagePlaceholder: string;
 
-  constructor(private assetService: AssetService) {
+  constructor(private assetService: AssetService, public flagService: FlagService) {
     this.profileImageSrc = this.assetService.getProfileImage('profile-optimized.jpeg', false);
     this.profileImagePlaceholder = this.assetService.getProfileImage('profile-optimized.jpeg', false);
   }
