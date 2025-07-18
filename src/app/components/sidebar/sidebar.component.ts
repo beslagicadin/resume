@@ -40,27 +40,27 @@ export class SidebarComponent {
   skillCategories: SkillCategory[] = [
     {
       name: 'Programming Languages',
-      skills: ['Java', 'Python', 'Kotlin', 'C', 'C++', 'C#', 'HTML', 'JavaScript', 'TypeScript', 'SQL'],
+      skills: ['Kotlin', 'Java', 'TypeScript', 'Python', 'C', 'C++', 'C#', 'HTML', 'JavaScript', 'SQL'],
       isExpanded: false
     },
     {
       name: 'Styling',
-      skills: ['CSS', 'SASS', 'SCSS', 'Tailwind CSS', 'Bootstrap', 'Material UI'],
+      skills: ['SASS', 'Tailwind CSS', 'Bootstrap', 'CSS', 'SCSS', 'Material UI'],
       isExpanded: false
     },
     {
       name: 'Frameworks & Libraries',
-      skills: ['Angular', 'Jetpack Compose', 'Spring', 'Spring Boot', 'Django', 'Flask', 'Maven', 'Qt', 'React', 'React Native'],
+      skills: ['Angular', 'Flask', 'React', 'Jetpack Compose', 'Spring', 'Spring Boot', 'Django', 'Maven', 'Qt', 'React Native'],
       isExpanded: false
     },
     {
       name: 'IDEs',
-      skills: ['JetBrains IDE Tools', 'Android Studio', 'Arduino IDE', 'Visual Studio', 'Visual Studio Code', 'RIDE'],
+      skills: ['JetBrains IDE Tools', 'Android Studio', 'VS Code', 'Arduino IDE', 'Visual Studio', 'RIDE'],
       isExpanded: false
     },
     {
       name: 'Databases',
-      skills: ['MySQL', 'PostgreSQL', 'SQLite', 'MongoDB', 'Firebase Storage', 'Oracle Database'],
+      skills: ['MySQL', 'MongoDB', 'Firebase Storage', 'PostgreSQL', 'SQLite', 'Oracle Database'],
       isExpanded: false
     },
     {
