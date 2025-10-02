@@ -14,10 +14,17 @@ export class ExperienceSectionComponent {
   experiences = [
     {
       title: 'Software Engineer',
+      company: 'Cape Ann Enterprises. Tuzla',
+      companyLink: 'https://www.linkedin.com/company/resonatebh',
+      period: 'Oct 2025 - Present',
+      description: 'Developing and maintaining responsive, user-centric web applications using modern front-end technologies (Angular, React). '
+    },
+    {
+      title: 'Software Engineer',
       company: 'Resonate d.o.o. Tuzla',
       companyLink: 'https://www.linkedin.com/company/resonatebh',
-      period: 'Dec 2024 - Present',
-      description: 'Working on development, testing and maintenance of mobile applications and SDKs using modern technologies.'
+      period: 'Dec 2024 - Aug 2025',
+      description: 'Worked on development, testing and maintenance of mobile applications and SDKs using Kotlin and Robot Framework.'
     },
     {
       title: 'Software Engineer',

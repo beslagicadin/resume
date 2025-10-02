@@ -164,3 +164,4 @@ pids
 # yarn.lock
 # pnpm-lock.yaml
 .vercel
+WARP.md
