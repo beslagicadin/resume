@@ -15,7 +15,7 @@ export class ExperienceSectionComponent {
     {
       title: 'Software Engineer',
       company: 'Cape Ann Enterprises. Tuzla',
-      companyLink: 'https://www.linkedin.com/company/resonatebh',
+      companyLink: 'https://capeannenterprises.com/',
       period: 'Oct 2025 - Present',
       description: 'Developing and maintaining responsive, user-centric web applications using modern front-end technologies (Angular, React). '
     },
